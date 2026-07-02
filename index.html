@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Co Cię boli — domowe kompendium samopomocy</title>
+<meta name="description" content="Niekomercyjne kompendium naturalnej samopomocy: akupresura, zioła, okłady, dieta — zanim dodzwonisz się do lekarza.">
+<meta name="theme-color" content="#2E4A38">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Co Cię boli">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap&subset=latin-ext');
+
+:root{
+  --paper:#F1F3EA;
+  --card:#FAFBF4;
+  --ink:#26332B;
+  --ink-soft:#4B5A50;
+  --moss:#47684F;
+  --moss-deep:#2E4A38;
+  --line:#D6DCC6;
+  --raspberry:#9E3D4E;
+  --raspberry-bg:#F7EBEC;
+  --honey:#8F6A1E;
+  --honey-bg:#F5EDD8;
+}
+*{box-sizing:border-box}
+.app{
+  min-height:100vh;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Karla',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.topbar{
+  max-width:660px;margin:0 auto;padding:18px 20px 0;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.brand{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:20px;color:var(--moss-deep);
+  background:none;border:none;cursor:pointer;padding:4px 0;
+}
+.switch{display:flex;align-items:center;gap:7px;font-size:12.5px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;user-select:none}
+.switch input{accent-color:var(--moss);width:16px;height:16px;cursor:pointer}
+.page{max-width:660px;margin:0 auto;padding:8px 20px 64px}
+
+.masthead{margin:36px 0 8px;text-align:center}
+.mast-rule{width:56px;height:2px;background:var(--moss);margin:0 auto 14px;border-radius:2px}
+.mast-eyebrow{margin:0;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+
+.qsec{margin-top:34px}
+.question{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:clamp(34px,7vw,46px);line-height:1.05;
+  color:var(--moss-deep);margin:0 0 16px;
+}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  font-family:'Karla',sans-serif;font-size:14.5px;font-weight:500;
+  color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;
+  padding:8px 15px;cursor:pointer;
+  transition:border-color .15s,background .15s;
+}
+.chip:hover{border-color:var(--moss);background:#fff}
+.chip:focus-visible,.acc__head:focus-visible,.back:focus-visible,
+.chooser-opt:focus-visible,.brand:focus-visible{
+  outline:2px solid var(--moss);outline-offset:2px;
+}
+
+.back{
+  background:none;border:none;color:var(--moss-deep);cursor:pointer;
+  font-family:'Karla',sans-serif;font-size:14px;padding:14px 0 6px;
+}
+.card-title{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(30px,6vw,40px);line-height:1.08;margin:6px 0 6px;
+  color:var(--ink);
+}
+.card-sub{margin:0 0 14px;color:var(--ink-soft);font-size:15px;font-style:italic}
+
+.flags{
+  border:1.5px solid var(--raspberry);
+  background:var(--raspberry-bg);
+  border-radius:10px;padding:14px 18px;margin:16px 0 20px;
+}
+.flags__title{
+  font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--raspberry);margin:0 0 8px;font-weight:700;
+}
+.flags ul{margin:0;padding-left:18px}
+.flags li{margin:5px 0;color:#5E2530;font-size:15px}
+
+.now{
+  background:var(--honey-bg);border-radius:10px;
+  padding:16px 18px 14px;margin:0 0 26px;
+}
+.now__title{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:24px;color:var(--honey);margin:0 0 8px;
+}
+.now ol{margin:0;padding-left:20px}
+.now li{margin:7px 0;font-size:15.5px}
+.now li::marker{color:var(--honey);font-weight:700}
+
+.modules-title{
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 10px;font-weight:700;
+}
+.acc{border-top:1px solid var(--line)}
+.acc:last-of-type{border-bottom:1px solid var(--line)}
+.acc__head{
+  width:100%;display:flex;justify-content:space-between;align-items:center;
+  background:none;border:none;cursor:pointer;
+  font-family:'Karla',sans-serif;font-size:16px;font-weight:700;color:var(--ink);
+  padding:13px 4px;text-align:left;
+}
+.acc--open .acc__head{color:var(--moss-deep)}
+.acc__sign{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--moss);line-height:1}
+.acc__body{margin:0 0 14px;padding:0 4px 0 22px}
+.acc__body li{margin:7px 0;font-size:15px;color:var(--ink)}
+.acc__body li::marker{color:var(--moss)}
+.hint{font-size:13px;color:var(--ink-soft);font-style:italic;margin-top:12px}
+
+.figs{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 12px}
+.fig{margin:0;background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:8px 6px 5px;text-align:center}
+.fig svg{display:block;margin:0 auto}
+.fig-line{fill:none;stroke:var(--ink-soft);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.fig-ring{fill:none;stroke:var(--raspberry);stroke-width:1.1;opacity:.8}
+.fig-dot{fill:var(--raspberry)}
+.fig-lab{font:700 8px 'Karla',sans-serif;fill:var(--moss-deep);letter-spacing:.02em}
+.fig figcaption{font-size:10.5px;color:var(--ink-soft);margin-top:3px;letter-spacing:.04em}
+
+.chooser-q{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:24px;color:var(--moss-deep);margin:4px 0 14px;
+}
+.chooser-list{display:flex;flex-direction:column;gap:10px}
+.chooser-opt{
+  text-align:left;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;padding:14px 16px;cursor:pointer;
+  font-family:'Karla',sans-serif;font-size:15.5px;color:var(--ink);
+  transition:border-color .15s;
+}
+.chooser-opt:hover{border-color:var(--moss)}
+
+.ph{color:var(--ink-soft);font-size:15.5px;max-width:46ch}
+.ph--small{font-size:13.5px}
+
+.foot{
+  margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--ink-soft);text-align:center;max-width:52ch;
+  margin-left:auto;margin-right:auto;
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+
+/* vanilla accordion */
+.acc__wrap{display:none}
+.acc--open .acc__wrap{display:block}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <button class="brand" id="brand">Co Cię boli</button>
+    <label class="switch"><input type="checkbox" id="ther"><span>tryb terapeuty</span></label>
+  </div>
+  <div id="content"></div>
+</div>
+<script>
+const PAIN = [
+  { id: "glowa", label: "głowa" },
+  { id: "migrena", label: "migrena" },
+  { id: "zab", label: "ząb i dziąsła" },
+  { id: "gardlo", label: "gardło" },
+  { id: "ucho", label: "ucho" },
+  { id: "oko", label: "oko" },
+  { id: "kark", label: "kark i szyja" },
+  { id: "bark", label: "bark" },
+  { id: "lokiec", label: "łokieć i nadgarstek" },
+  { id: "plecy", label: "plecy i krzyż" },
+  { id: "biodro", label: "biodro" },
+  { id: "kolano", label: "kolano" },
+  { id: "stopa", label: "stopa i pięta" },
+  { id: "dna", label: "dna moczanowa (atak)" },
+  { id: "miesnie", label: "mięśnie" },
+  { id: "brzuch", label: "brzuch" },
+  { id: "zoladek", label: "żołądek" },
+  { id: "zolc", label: "pęcherzyk żółciowy (kolka)" },
+  { id: "nerka", label: "kolka nerkowa" },
+  { id: "miesiaczka", label: "bolesna miesiączka" },
+  { id: "pecherz", label: "pęcherz" },
+  { id: "hemoroidy", label: "hemoroidy" },
+];
+
+const SYMPTOMS = [
+  { id: "goraczka", label: "gorączka" },
+  { id: "przeziebienie", label: "przeziębienie" },
+  { id: "kaszel", label: "kaszel" },
+  { id: "katar", label: "katar i zatoki" },
+  { id: "chrypka", label: "chrypka" },
+  { id: "nos", label: "krwawienie z nosa" },
+  { id: "afty", label: "afty i zajady" },
+  { id: "zgaga", label: "zgaga" },
+  { id: "nudnosci", label: "nudności" },
+  { id: "czkawka", label: "czkawka" },
+  { id: "kac", label: "kac" },
+  { id: "biegunka", label: "biegunka" },
+  { id: "zaparcie", label: "zaparcie" },
+  { id: "wzdecia", label: "wzdęcia" },
+  { id: "zawroty", label: "zawroty głowy" },
+  { id: "kolatanie", label: "kołatanie serca" },
+  { id: "cisnienie", label: "skoczyło ciśnienie" },
+  { id: "niskie", label: "niskie ciśnienie" },
+  { id: "obrzeki", label: "obrzęki nóg" },
+  { id: "skurcze", label: "skurcze łydek" },
+  { id: "opryszczka", label: "opryszczka" },
+  { id: "wysypka", label: "wysypka i pokrzywka" },
+  { id: "jeczmien", label: "jęczmień na oku" },
+  { id: "oparzenie", label: "oparzenie" },
+  { id: "stluczenie", label: "stłuczenie i siniak" },
+  { id: "ukaszenie", label: "ukąszenie owada" },
+  { id: "bezsennosc", label: "bezsenność" },
+  { id: "panika", label: "atak paniki" },
+  { id: "lek", label: "lęk i napięcie" },
+  { id: "menopauza", label: "uderzenia gorąca (menopauza)" },
+  { id: "zmeczenie", label: "zmęczenie" },
+  { id: "nastroj", label: "obniżony nastrój" },
+];
+
+/* Karty z wyborem rodzaju bólu */
+const CHOOSERS = {
+  kolano: {
+    title: "Kolano",
+    question: "Który to ból?",
+    options: [
+      { label: "z przodu, wokół rzepki — zwłaszcza schody w dół", cardId: "kolano-przod" },
+      { label: "po wewnętrznej stronie kolana", cardId: "kolano-wewn" },
+      { label: "z tyłu, pod kolanem", cardId: "kolano-tyl" },
+      { label: "kolano spuchnięte, ciepłe", cardId: "kolano-obrzek" },
+    ],
+  },
+  bark: {
+    title: "Bark",
+    question: "Który to ból?",
+    options: [
+      { label: "boli przy unoszeniu ręki w bok / do góry", cardId: "bark-unoszenie" },
+      { label: "budzi w nocy, nie da się spać na tym boku", cardId: "bark-nocny" },
+      { label: "bark sztywnieje, ruch coraz mniejszy („zamrożony”)", cardId: "bark-zamrozony" },
+      { label: "ból schodzi z karku do barku i ręki", cardId: "bark-kark" },
+    ],
+  },
+};
+
+/* Pełne karty. flags = czerwone flagi; now = Zrób teraz; modules = rozwijane sekcje. */
+const CARDS = {
+  gardlo: {
+    title: "Boli gardło",
+    flags: [
+      "Trudność w oddychaniu albo w przełykaniu własnej śliny",
+      "Silny obrzęk po jednej stronie gardła, szczękościsk, zmieniony głos („kluska w ustach”)",
+      "Gorączka powyżej 39°C, która nie spada mimo leków",
+      "Drobna wysypka na ciele przy bólu gardła i gorączce (możliwa szkarlatyna)",
+    ],
+    now: [
+      "Płukanka: pół łyżeczki soli na szklankę ciepłej wody. Płucz 30 sekund, co 2–3 godziny.",
+      "Łyżeczka miodu — powoli, nie popijaj przez 15 minut, niech obklei gardło.",
+      "Uciskaj punkt LU10: środek kłębu kciuka, po stronie dłoniowej. 1–2 minuty, do lekkiego rozbolenia.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LU10 (Yuji) — środek mięsistego kłębu kciuka. Główny punkt „gorąca w gardle”. Uciskaj mocno 1–2 min, kilka razy dziennie.",
+        "LI4 (Hegu) — szczyt fałdu między kciukiem a palcem wskazującym. Ból głowy, gardła, twarzy. Nie stosować w ciąży.",
+        "KI6 — pod kostką wewnętrzną: gdy gardło suche, drapiące, gorsze wieczorem.",
+      ]},
+      { id: "akupunktura", items: [
+        "LU11 (Shaoshang) — upust kropli krwi przy ostrym, gorącym bólu gardła; szybki efekt w wietrze-gorącu.",
+        "LU10, LI4, LI11 — oczyszczanie gorąca; SI17, ST44 wspierająco.",
+        "Gardło suche, przewlekłe (niedobór Yin nerek): KI6 + LU7 (para naczyń nadzwyczajnych Ren/Yin Qiao), KI3.",
+        "Bańka lub gua sha na kark (BL12, GB20) przy początku wiatru-zimna.",
+      ], therapist: true },
+      { id: "refleksologia", items: [
+        "Strefa gardła: podstawa dużego palca stopy, na styku palca i śródstopia — masuj okrężnie 2–3 minuty na obu stopach.",
+        "Dorzuć strefy limfy: przestrzenie między palcami, przesuwaj kciukiem od palców w dół.",
+      ]},
+      { id: "ziola", items: [
+        "Szałwia — napar do płukania (łyżka na szklankę, parzyć pod przykryciem 10 min). Nie do picia w ciąży i przy karmieniu.",
+        "Prawoślaz — macerat na zimno (łyżka korzenia na szklankę chłodnej wody, 2 godziny): śluz osłania podrażnione gardło.",
+        "Tymianek — napar do picia i płukania, działa przeciwbakteryjnie.",
+        "Imbir świeży + cytryna + miód (miód dodawaj do napoju poniżej 40°C, inaczej traci właściwości).",
+      ]},
+      { id: "oklady", items: [
+        "Okład z twarogu na szyję: zimny twaróg na ściereczce, na gardło na 20–30 minut — klasyka przeciwzapalna.",
+        "Gdy gardło „drapie z zimna”: ciepły okład z ugotowanych, rozgniecionych ziemniaków w ściereczce.",
+      ]},
+      { id: "dieta", items: [
+        "Wyklucz: ostre, kwaśne, bardzo gorące napoje, chrupiące pieczywo, alkohol, papierosy.",
+        "Włącz: ciepłe (nie gorące) zupy, kisiel z siemienia lnianego, banany, jajecznicę — miękko i osłonowo.",
+      ]},
+      { id: "plukanki", items: [
+        "Naprzemiennie: sól rano, szałwia w południe, soda (pół łyżeczki na szklankę) wieczorem.",
+        "Inhalacja z tymianku lub 2 kropli olejku eukaliptusowego na miskę gorącej wody, ręcznik na głowę, 5–10 minut.",
+      ]},
+      { id: "olejki", items: [
+        "Drzewo herbaciane lub eukaliptus — wyłącznie do inhalacji lub rozcieńczone do smarowania szyi (2–3 krople na łyżkę oleju). Nigdy doustnie.",
+      ]},
+      { id: "suplementy", items: [
+        "Cynk w pastylkach do ssania — zaczęty w pierwszej dobie może skrócić infekcję. Maksymalnie 5 dni.",
+        "Witamina C 500–1000 mg, propolis w sprayu lub pastylkach.",
+      ]},
+      { id: "totalna", items: [
+        "Gardło to w totalnej biologii miejsce niewypowiedzianych słów i „kęsa, którego nie dało się przełknąć ani wypluć”.",
+        "Pytanie do siebie: co ostatnio przełknąłeś w milczeniu? Komu nie powiedziałaś tego, co cisnęło się na usta?",
+      ]},
+    ],
+  },
+
+  migrena: {
+    title: "Migrena",
+    flags: [
+      "Piorunujący, najsilniejszy ból głowy w życiu, narastający w sekundach — dzwoń po pomoc (112)",
+      "Ból głowy + gorączka + sztywność karku (nie da się dotknąć brodą klatki piersiowej)",
+      "Zaburzenia mowy, widzenia, opadający kącik ust, słabość ręki lub nogi — objawy udaru",
+      "Pierwszy tak silny ból po 50. roku życia albo po uderzeniu w głowę",
+    ],
+    now: [
+      "Ciemno, cicho, połóż się. Zimny okład na czoło i skronie, ciepły na kark.",
+      "Wypij 2 szklanki wody i — jeśli łapiesz atak na początku — małą mocną kawę: kofeina obkurcza rozszerzone naczynia.",
+      "Uciskaj LI4 (między kciukiem a wskazującym) mocno, pulsacyjnie, po 2 minuty na każdą rękę.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LI4 (Hegu) — najlepiej przebadany punkt bólu głowy. Nie w ciąży.",
+        "GB20 (Fengchi) — dołki pod potylicą, po obu stronach kręgosłupa. Kciukami w górę, w stronę oczu, 2 minuty.",
+        "Taiyang — skronie, delikatne kółka.",
+        "LV3 (Taichong) — na grzbiecie stopy między I a II kością śródstopia; migrena „z wątroby”: ze złości, napięcia, przed miesiączką.",
+      ]},
+      { id: "akupunktura", items: [
+        "Baza: GB20, LI4, LV3 (tzw. cztery bramy z LI4), Taiyang, Yintang.",
+        "Migrena skroniowa (Shaoyang): GB8, TE5, GB41 — para z TE5.",
+        "Wzorzec wzniesionego Yang wątroby: LV2 zamiast LV3, GB43, KI3 dla zakorzenienia.",
+        "W aurze: nakłuć wcześnie, zanim rozwinie się ból; delikatna technika, pacjent leży.",
+      ], therapist: true },
+      { id: "refleksologia", items: [
+        "Duży palec stopy = głowa: ugniataj całą opuszkę, szczególnie boki (skronie).",
+        "Wewnętrzna krawędź stopy wzdłuż łuku = kręgosłup; przejdź kciukiem odcinek „szyjny” (u podstawy palucha).",
+      ]},
+      { id: "ziola", items: [
+        "Imbir — pół łyżeczki sproszkowanego w wodzie na początku ataku; w jednym badaniu klinicznym działał porównywalnie do sumatryptanu.",
+        "Złocień maruna (feverfew) — profilaktycznie, codziennie przez min. 6 tygodni; nie w ciąży.",
+        "Melisa lub lawenda napar — gdy migrenie towarzyszy napięcie i płytki sen.",
+      ]},
+      { id: "oklady", items: [
+        "Zimno na głowę, ciepło na stopy lub kark — ta para „ściąga krew w dół” i często skraca atak.",
+        "Ciepła kąpiel stóp 15 minut w trakcie bólu (jeśli zimno na czole jest przyjemne, to dobry znak dla tej metody).",
+      ]},
+      { id: "dieta", items: [
+        "Częste wyzwalacze: dojrzewające sery, czerwone wino, czekolada, glutaminian, wędliny peklowane (azotyny), słodziki, pomijanie posiłków.",
+        "Włącz: regularne posiłki co 3–4 h, produkty bogate w magnez (kasza gryczana, pestki dyni, kakao surowe), dużo wody.",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez 300–400 mg dziennie (cytrynian/glicynian) — profilaktyka o dobrych dowodach.",
+        "Ryboflawina (wit. B2) 400 mg dziennie — efekt po 2–3 miesiącach, potwierdzony badaniami.",
+        "Koenzym Q10 100–300 mg — trzecia opcja profilaktyczna.",
+      ]},
+      { id: "olejki", items: [
+        "Olejek miętowy 10% w oleju nośnym wcierany w skronie i czoło — w badaniach porównywalny z paracetamolem przy bólu napięciowym.",
+        "Lawenda — 15 minut wąchania z chusteczki w trakcie ataku zmniejszało ból w badaniu klinicznym.",
+      ]},
+      { id: "automasaz", items: [
+        "Rozmasuj mięśnie żuchwy (żwacze) — zaciskanie zębów to cichy współsprawca wielu migren.",
+        "Skóra głowy: „mycie włosów na sucho” opuszkami palców, 2–3 minuty.",
+      ]},
+      { id: "totalna", items: [
+        "Migrena bywa wiązana z konfliktem intelektualnym: „za dużo naraz do przetworzenia”, decyzja, której nie da się podjąć.",
+        "Pytanie do siebie: nad czym myślisz w kółko bez rozwiązania? Co musiałoby się stać, żebyś mógł przestać?",
+      ]},
+    ],
+  },
+
+  zgaga: {
+    title: "Zgaga",
+    flags: [
+      "Pieczenie/ból w klatce z dusznością, zimnym potem, promieniowaniem do ramienia lub żuchwy — to może być zawał, dzwoń 112",
+      "Trudność w przełykaniu, uczucie zatrzymywania się kęsa",
+      "Chudnięcie bez powodu, smoliste stolce, wymioty z krwią",
+      "Zgaga niemal codziennie przez ponad 2 tygodnie — umów lekarza niezależnie od domowych metod",
+    ],
+    now: [
+      "Zjedz powoli kilka migdałów albo wypij kisiel z siemienia lnianego — osłonowo, bez chemii.",
+      "Doraźnie: pół łyżeczki sody w połowie szklanki wody (nie nawykowo i nie przy nadciśnieniu).",
+      "Nie kładź się przez 2–3 godziny. Jeśli musisz — na lewym boku: żołądek wisi wtedy poniżej przełyku.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "PC6 (Neiguan) — trzy palce powyżej nadgarstka, między ścięgnami. Punkt „buntującego się żołądka”: zgaga, nudności, odbijanie.",
+        "CV12 — w połowie między pępkiem a mostkiem; masuj delikatnie okrężnie, nie na pełny żołądek.",
+        "ST36 — cztery palce pod rzepką, na zewnątrz od piszczeli; wzmacnia całe trawienie.",
+      ]},
+      { id: "akupunktura", items: [
+        "PC6 + SP4 (para Chong Mai) — klasyczne połączenie na wznoszące Qi żołądka.",
+        "CV12, ST36, ST44 na gorąco żołądka; LV3, GB34 gdy tło emocjonalne (drzewo atakuje ziemię).",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Siemię lniane — kisiel 2–3 razy dziennie przed jedzeniem: łyżka zmielonego siemienia zalana ciepłą wodą.",
+        "Prawoślaz, ślaz — śluzy osłaniające przełyk.",
+        "Rumianek — łagodzi i lekko rozkurcza.",
+        "Lukrecja DGL do ssania przed posiłkiem — ale zwykłej lukrecji unikaj przy nadciśnieniu.",
+      ]},
+      { id: "dieta", items: [
+        "Wyklucz na próbę 2 tygodnie: kawę, alkohol, czekoladę, miętę (tak — mięta rozluźnia zwieracz przełyku i nasila zgagę), tłuste i smażone, cytrusy, pomidory, cebulę, gazowane.",
+        "Włącz: owsiankę, banany, migdały, gotowane warzywa, chude białko.",
+        "Jak jeść: mniejsze porcje, ostatni posiłek 3 godziny przed snem, nie popijaj obficie w trakcie.",
+        "Unieś wezgłowie łóżka o 10–15 cm (klocki pod nogi łóżka działają lepiej niż druga poduszka).",
+      ]},
+      { id: "suplementy", items: [
+        "Melatonina 3 mg wieczorem — zaskakująco dobre badania przy refluksie: wzmacnia napięcie dolnego zwieracza przełyku.",
+        "Magnez, jeśli zgadze towarzyszą skurcze i stres.",
+      ]},
+      { id: "oddech", items: [
+        "Trening oddechu przeponowego 10 minut dziennie wzmacnia okolicę zwieracza — udokumentowane w badaniach nad refluksem.",
+      ]},
+      { id: "totalna", items: [
+        "Żołądek to miejsce konfliktu „niestrawionego kęsa”: sytuacji, sprawy albo słowa, którego nie da się strawić.",
+        "Pytanie do siebie: co Cię „pali” od środka? Z czym się nie godzisz, a co codziennie łykasz?",
+      ]},
+    ],
+  },
+
+  bezsennosc: {
+    title: "Bezsenność",
+    flags: [
+      "Głośne chrapanie z przerwami w oddechu i zrywaniem się — podejrzenie bezdechu, wymaga diagnostyki",
+      "Bezsenność z myślami rezygnacyjnymi lub „że lepiej by było nie być” — nie czekaj, sięgnij po pomoc już dziś",
+      "Bezsenność trwająca ponad miesiąc mimo domowych metod",
+    ],
+    now: [
+      "Oddech 4–7–8: wdech nosem na 4, zatrzymanie na 7, wydech ustami na 8. Cztery rundy.",
+      "Nie śpisz ponad 20 minut? Wstań, wyjdź z sypialni, poczytaj przy słabym świetle. Łóżko ma się kojarzyć ze snem, nie z walką.",
+      "Ciepła kąpiel stóp 15 minut przed snem — ogrzanie stóp paradoksalnie obniża temperaturę wnętrza ciała, a to jej spadek uruchamia sen.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "HT7 (Shenmen, „Brama Ducha”) — w zgięciu nadgarstka, po stronie małego palca. Główny punkt niespokojnego umysłu. Uciskaj minutę na każdej ręce, leżąc.",
+        "Yintang — między brwiami; głaskanie kciukiem w górę czoła, powoli.",
+        "KI1 (Yongquan) — środek podeszwy stopy w jednej trzeciej od palców; ściąga rozbiegane myśli w dół.",
+        "An Mian — za uchem, między wyrostkiem a mięśniem karku; punkt „spokojnego snu”.",
+      ]},
+      { id: "akupunktura", items: [
+        "Baza: HT7, SP6, Yintang, An Mian.",
+        "Niedobór Yin z gorącem (budzenie 3–5 nad ranem, gorące stopy): KI6 + BL62 (Yin/Yang Qiao — klasyczna para regulująca sen), KI3, HT6.",
+        "Nadmiar (pełnia, ogień wątroby, sny gniewne): LV2, GB44, ściąganie przez KI1.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Melisa — 2 filiżanki: popołudniu i godzinę przed snem.",
+        "Kozłek (waleriana) — działa po 2–4 tygodniach regularnie, nie doraźnie; nie łączyć z lekami uspokajającymi.",
+        "Chmiel, lawenda — do mieszanki lub poduszki ziołowej.",
+        "Wiśnia cierpka (sok/kapsułki) — naturalne źródło melatoniny, przyzwoite badania u seniorów.",
+      ]},
+      { id: "praktyki", items: [
+        "Stała godzina wstawania — ważniejsza niż godzina kładzenia się. Także w weekend.",
+        "Sypialnia 17–19°C, ciemna jak piwnica; ekran żegnamy godzinę przed snem.",
+        "Rano 10 minut światła dziennego do oczu (balkon, spacer) — to nastawia wieczorną melatoninę.",
+        "Bez drzemek po 15:00.",
+      ]},
+      { id: "oddech", items: [
+        "Wydłużony wydech (wdech 4, wydech 8) przez 5 minut w łóżku — włącza nerw błędny, fizjologiczny hamulec.",
+        "„Fizjologiczne westchnienie”: podwójny wdech nosem (drugi krótki, dobierający) i długi wydech ustami. Najszybszy znany sposób rozbrojenia układu nerwowego.",
+      ]},
+      { id: "dieta", items: [
+        "Bez kofeiny po 14:00 (jej połowa krąży we krwi jeszcze po 5–7 godzinach).",
+        "Alkohol usypia, ale wybudza w drugiej połowie nocy — na czas kłopotów ze snem odstaw całkiem.",
+        "Ciekawostka z badań: 2 kiwi zjedzone godzinę przed snem poprawiały zasypianie i długość snu.",
+        "Kolacja lekka, ciepła, 2–3 godziny przed snem.",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez (glicynian) 200–400 mg wieczorem.",
+        "Melatonina: mniej znaczy lepiej — 0,5–1 mg 2–3 h przed snem działa często lepiej niż 5 mg tuż przed.",
+        "L-teanina 200 mg — wyciszenie bez otępienia.",
+      ]},
+      { id: "olejki", items: [
+        "Lawenda: 2 krople na chusteczkę przy poduszce albo do dyfuzora; badania potwierdzają skrócenie zasypiania.",
+      ]},
+      { id: "totalna", items: [
+        "Czuwanie to w totalnej biologii trzymanie warty: „nie mogę stracić kontroli, coś się stanie, gdy odpuszczę”.",
+        "Pytanie do siebie: czego pilnujesz nocą? Co musiałoby być bezpieczne, żebyś mogła zgasić posterunek?",
+      ]},
+    ],
+  },
+
+  cisnienie: {
+    title: "Skoczyło ciśnienie",
+    flags: [
+      "Powyżej 180/120 z bólem głowy, bólem w klatce, zaburzeniami widzenia lub dusznością — dzwoń 112",
+      "Wysokie ciśnienie pierwszy raz w ciąży — pilny kontakt z lekarzem tego samego dnia",
+      "Jeśli bierzesz leki na ciśnienie: nie odstawiaj ich na rzecz metod naturalnych. One są dodatkiem, nie zamiennikiem.",
+    ],
+    now: [
+      "Usiądź wygodnie, oprzyj plecy, stopy na podłodze. Nie mierz co 5 minut — sam pomiar podnosi wynik.",
+      "Oddychaj 5 minut w rytmie: wdech 4 sekundy, wydech 8. Sześć oddechów na minutę potrafi zdjąć kilka–kilkanaście mmHg.",
+      "Zmierz ponownie po 15–20 minutach spokoju, na tej samej ręce.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LV3 (Taichong) — grzbiet stopy, między I a II kością śródstopia. Punkt pierwszego wyboru przy ciśnieniu „ze złości i napięcia”.",
+        "LI11 — koniec fałdu łokciowego przy zgiętej ręce; klasyczny punkt obniżający.",
+        "KI1 — środek podeszwy; ściąga nadmiar z góry w dół. Można rozetrzeć stopy o siebie.",
+        "GB20 — dołki podpotyliczne, gdy ciśnieniu towarzyszy sztywny kark i szum w głowie.",
+      ]},
+      { id: "akupunktura", items: [
+        "Wznoszące Yang wątroby: LV3, GB20, LI11, KI3, SP6; przy ogniu LV2.",
+        "Flegma i wilgoć (ociężałość, obłożony język): ST40, SP9 dodatkowo.",
+        "Uwaga na pozycję: pacjent z wysokim ciśnieniem leży, wstaje powoli.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Głóg (kwiatostan/owoc) — zioło serca numer jeden; efekt buduje się tygodniami, pić regularnie.",
+        "Hibiskus — 2–3 filiżanki dziennie obniżały ciśnienie skurczowe w badaniach klinicznych o ~7 mmHg.",
+        "Melisa — gdy ciśnienie skacze od nerwów.",
+        "Czosnek (świeży lub dojrzewający ekstrakt) — łagodny, udokumentowany efekt.",
+      ]},
+      { id: "dieta", items: [
+        "Sól: realny cel to gotowanie bez dosalania i czytanie etykiet (pieczywo i wędliny to główni przemytnicy).",
+        "Sok z buraka (200 ml dziennie) — azotany rozszerzają naczynia; efekt mierzalny w ciągu godzin.",
+        "Potas kontra sód: banany, pomidory, ziemniaki, fasola — chyba że masz chore nerki lub leki oszczędzające potas (wtedy spytaj lekarza).",
+        "Ogranicz alkohol; kawa doraźnie podnosi, u stałych kawoszy efekt słabnie.",
+      ]},
+      { id: "oddech", items: [
+        "Codzienne 10–15 minut wolnego oddechu (6/min) daje w badaniach spadki rzędu 5–10 mmHg po kilku tygodniach — to najlepiej udokumentowana „niefarmakologia” obok ruchu.",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez 300–400 mg, omega-3 (2–3 g EPA+DHA), koenzym Q10 100–200 mg.",
+        "Potas tylko po konsultacji, jeśli bierzesz leki na ciśnienie.",
+      ]},
+      { id: "automasaz", items: [
+        "Powolny masaż karku i mięśni czworobocznych; ciepły prysznic na kark.",
+        "Moczenie stóp w ciepłej wodzie 15 minut — „ściąga w dół”.",
+      ]},
+      { id: "totalna", items: [
+        "Nadciśnienie bywa czytane jako walka trzymana w środku: gotowość do starcia, które nigdy nie następuje.",
+        "Pytanie do siebie: z kim toczysz cichą wojnę? Gdzie trzymasz gard, choć nikt nie atakuje?",
+      ]},
+    ],
+  },
+
+  panika: {
+    title: "Atak paniki",
+    flags: [
+      "Pierwszy raz w życiu taki atak z bólem w klatce, dusznością, promieniowaniem do ręki — nie zgaduj, czy to panika czy serce. Dzwoń 112. Lepiej raz nadmiarowo.",
+      "Po ataku: zaburzenia mowy, widzenia, osłabienie połowy ciała",
+      "Ataki nawracają i zaczynasz unikać miejsc z ich powodu — czas na terapeutę, to bardzo dobrze się leczy",
+    ],
+    now: [
+      "Nazwij to na głos: „to atak paniki, nie umieram, to minie w kilka minut”. Mózg słucha słów.",
+      "Podwójny wdech nosem (drugi krótki, dobierający powietrze) i baaardzo długi wydech przez zwężone usta. Powtórz 5 razy.",
+      "Zimna woda na twarz i nadgarstki albo zimny okład na policzki — uruchamia odruch nurkowania i fizycznie zwalnia serce.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "PC6 (Neiguan) — trzy palce nad nadgarstkiem; punkt ratunkowy klatki piersiowej: kołatanie, ucisk, lęk.",
+        "HT7 — zgięcie nadgarstka od strony małego palca.",
+        "CV17 — środek mostka, na linii sutków; masuj okrężnie, tu „zamyka się” oddech.",
+        "KI1 — środek podeszwy; tupanie bosymi stopami o podłogę też działa: uziemia dosłownie.",
+      ]},
+      { id: "akupunktura", items: [
+        "PC6, HT7, Yintang, CV17, KI1; ucho: Shenmen, punkt serca.",
+        "Konstytucjonalnie: niedobór Yin serca i nerek (HT6, KI6) vs flegma-ogień (ST40, PC5).",
+      ], therapist: true },
+      { id: "oddech", items: [
+        "W trakcie: liczy się wydech, nie wdech. Hiperwentylacja (za dużo wdechów) sama wywołuje mrowienie i zawroty, które napędzają panikę.",
+        "Uziemienie 5–4–3–2–1: znajdź 5 rzeczy, które widzisz, 4 które czujesz dotykiem, 3 które słyszysz, 2 które wąchasz, 1 którą smakujesz.",
+        "Profilaktycznie: 10 minut wolnego oddechu dziennie obniża pobudliwość układu — ataki przychodzą rzadziej i słabiej.",
+      ]},
+      { id: "ziola", items: [
+        "Kapsułki z olejkiem lawendowym (Silexan 80 mg) — w badaniach klinicznych porównywalne z lekiem przeciwlękowym, bez uzależnienia.",
+        "Melisa, rumianek — regularnie, jako herbata tła.",
+        "Uwaga: żeń-szeń i wysokie dawki zielonej herbaty mogą nasilać niepokój.",
+      ]},
+      { id: "dieta", items: [
+        "Kofeina to benzyna dla paniki — na czas ataków odstaw też energetyki i mocną herbatę.",
+        "Stabilny cukier: nie pomijaj posiłków; spadek glukozy imituje objawy lęku (drżenie, poty, kołatanie).",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez 300–400 mg dziennie, L-teanina 200 mg doraźnie.",
+        "Omega-3 — łagodny efekt przeciwlękowy w badaniach.",
+      ]},
+      { id: "praktyki", items: [
+        "Regularny ruch (szybki spacer 30 minut) działa przeciwlękowo na poziomie porównywalnym z łagodnymi lekami.",
+        "Po ataku nie uciekaj z miejsca, w którym się zdarzył, jeśli to bezpieczne — zostań 5 minut, niech mózg zapisze: „przeżyłem, tu nic nie grozi”.",
+      ]},
+      { id: "totalna", items: [
+        "Atak paniki bywa opisywany jako echo konfliktu nagłego, śmiertelnego przestrachu — dawnego lub świeżego.",
+        "Pytanie do siebie: co się wydarzyło tuż przed pierwszym atakiem? Czego naprawdę się wtedy przestraszyłaś?",
+      ]},
+    ],
+  },
+
+  menopauza: {
+    title: "Uderzenia gorąca",
+    flags: [
+      "Jakiekolwiek krwawienie po menopauzie (rok od ostatniej miesiączki) — zawsze wizyta u ginekologa",
+      "Uderzenia gorąca z kołataniem, chudnięciem, drżeniem rąk — sprawdź tarczycę, objawy bywają bliźniacze",
+    ],
+    now: [
+      "Na początku fali: zwolnij oddech do 6/min (wdech 4, wydech 6–8). Badania nad „paced breathing” pokazują, że fala jest krótsza i płytsza.",
+      "Chłodna woda na nadgarstki i kark — tam naczynia leżą płytko.",
+      "Ubieraj się na cebulkę z rzeczy naturalnych (len, bawełna) — zdejmowana warstwa to połowa metody.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "SP6 (Sanyinjiao) — cztery palce nad kostką wewnętrzną, tuż za piszczelą; główny punkt kobiecej równowagi hormonalnej.",
+        "KI3 — między kostką wewnętrzną a ścięgnem Achillesa; zasila Yin, czyli „chłodzenie od środka”.",
+        "HT6 — pół cala nad zgięciem nadgarstka od strony małego palca: punkt nocnych potów.",
+      ]},
+      { id: "akupunktura", items: [
+        "Niedobór Yin nerek z pustym gorącem: KI3, KI6, SP6, HT6, LU7+KI6 (Ren Mai).",
+        "Dorzuć DU14 przy zlewnych potach; serię 8–10 zabiegów, potem podtrzymanie — metaanalizy pokazują realną redukcję częstości uderzeń.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Szałwia — zioło numer jeden na poty i uderzenia; w badaniu szwajcarskim tabletki ze świeżej szałwi zmniejszały liczbę uderzeń o połowę po 4 tygodniach.",
+        "Pluskwica groniasta (black cohosh) — najlepiej przebadane zioło menopauzalne; efekt po 4–8 tygodniach; nie przy chorobach wątroby.",
+        "Czerwona koniczyna (izoflawony), niepokalanek przy huśtawce nastroju w perimenopauzie.",
+        "Siemię lniane 2 łyżki dziennie — lignany działają łagodnie estrogenopodobnie.",
+      ]},
+      { id: "dieta", items: [
+        "Wyzwalacze fal: alkohol (zwłaszcza wino), kawa, ostre przyprawy, gorące napoje, duże posiłki — obserwuj swoje.",
+        "Włącz: soję w naturalnej postaci (tofu, edamame, napój sojowy), siemię, dużo warzyw; u części kobiet redukuje uderzenia wyraźnie.",
+        "Białko w każdym posiłku — po menopauzie mięśnie i kości potrzebują go więcej, nie mniej.",
+      ]},
+      { id: "praktyki", items: [
+        "Sypialnia chłodna, pościel z naturalnych włókien, wachlarz przy łóżku bez wstydu.",
+        "Regularny trening siłowy 2× w tygodniu — kości, sen i nastrój w jednym.",
+      ]},
+      { id: "oddech", items: [
+        "Codzienne 10 minut wolnego oddechu zmniejszało w badaniach częstość uderzeń — traktuj jak zabieg, nie jak relaks.",
+      ]},
+      { id: "suplementy", items: [
+        "Witamina D + K2, wapń z diety, magnez wieczorem.",
+        "Omega-3 na nastrój i stawy.",
+      ]},
+      { id: "totalna", items: [
+        "Ten czas bywa czytany jako przejście władzy: ciało kończy jedną służbę i pyta, komu teraz będziesz służyć — może wreszcie sobie.",
+        "Pytanie do siebie: co chcesz zostawić za sobą razem z tym etapem? Na co odzyskujesz miejsce?",
+      ]},
+    ],
+  },
+
+  glowa: {
+    title: "Boli głowa",
+    flags: [
+      "Nagły, najsilniejszy ból życia; ból z gorączką i sztywnością karku; po urazie głowy",
+      "Z zaburzeniami widzenia, mowy, osłabieniem ręki lub nogi — objawy udaru, dzwoń 112",
+    ],
+    now: [
+      "Wypij 2 szklanki wody — odwodnienie to najczęstszy zapomniany winowajca.",
+      "Ciepły prysznic na kark i barki albo rozmasuj GB20 (dołki pod potylicą) przez 2 minuty.",
+      "Uciskaj LI4 pulsacyjnie po 2 minuty na każdą rękę.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LI4 — najlepiej przebadany punkt bólu głowy (nie w ciąży).",
+        "GB20 — kciukami w dołki pod czaszką, nacisk w stronę oczu.",
+        "Taiyang — skronie, delikatne kółka; GB21 przy bólu „od karku i barków”.",
+      ]},
+      { id: "akupunktura", items: [
+        "Napięciowy: GB20, GB21, LI4, Taiyang, punkty Ashi karku; gua sha na kark.",
+        "Z przodu czoła (żołądkowy): ST8, LI4, ST44; ciemię (wątrobowy): DU20, LV3.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Melisa lub lawenda — gdy ból idzie ze spięcia.",
+        "Kora wierzby / wiązówka — naturalne salicylany (nie z lekami przeciwzakrzepowymi).",
+      ]},
+      { id: "oklady", items: [
+        "Ciepły na kark przy bólu napięciowym; chłodny na czoło, gdy ból pulsuje.",
+      ]},
+      { id: "dieta", items: [
+        "Regularne posiłki i woda; uwaga na „ból odstawienny” — u kawoszy weekendowy ból głowy to często brak porannej kawy.",
+      ]},
+      { id: "automasaz", items: [
+        "Żwacze (mięśnie żuchwy) i skronie; „mycie głowy na sucho” opuszkami 2 minuty.",
+      ]},
+      { id: "totalna", items: [
+        "Głowa „pęka”, gdy myśli nie mieszczą się w czaszce: co próbujesz rozwiązać samym myśleniem?",
+      ]},
+    ],
+  },
+
+  zab: {
+    title: "Boli ząb",
+    flags: [
+      "Obrzęk twarzy, trudność otwarcia ust lub przełykania, gorączka — ropień, pilnie do lekarza/dentysty",
+      "Wszystko poniżej to tylko przetrwanie do wizyty: ból zęba zawsze kończy się u dentysty",
+    ],
+    now: [
+      "Płukanka: łyżeczka soli lub sody na szklankę ciepłej wody, co 2 godziny.",
+      "Goździk: rozgryź delikatnie przy chorym zębie albo przyłóż wacik z kroplą olejku goździkowego — eugenol to naturalny środek znieczulający, ten sam, którego używają dentyści.",
+      "Zimny okład na policzek od zewnątrz. Nigdy ciepły — ciepło rozdmuchuje ropień.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LI4 — klasyczny punkt „zębowy”; w starych badaniach lód rozcierany na LI4 zmniejszał ból zęba o połowę.",
+        "ST44 — na stopie, między II a III palcem: ból zębów dolnych i dziąseł.",
+      ]},
+      { id: "akupunktura", items: [
+        "LI4, ST44, ST6/ST7 przy żuchwie, punkty Ashi; szczęka górna: LI20, ST2.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Szałwia — płukanka na dziąsła; kora dębu przy krwawiących.",
+      ]},
+      { id: "olejki", items: [
+        "Goździkowy — punktowo na ząb, nie na śluzówkę w większej ilości.",
+      ]},
+      { id: "totalna", items: [
+        "Zęby służą do „ugryzienia” problemu: czego nie możesz ugryźć albo kogo nie wolno Ci ugryźć?",
+      ]},
+    ],
+  },
+
+  ucho: {
+    title: "Boli ucho",
+    flags: [
+      "Wyciek ropny lub krwisty, nagłe pogorszenie słuchu, silny ból z gorączką u dziecka",
+      "Ból ucha z zawrotami głowy lub opadnięciem kącika ust — pilna diagnostyka",
+      "Nie wlewaj nic do ucha, jeśli jest wyciek — błona mogła pęknąć",
+    ],
+    now: [
+      "Suche ciepło z zewnątrz: podgrzana sól lub pestki wiśni w woreczku na małżowinę 15 minut.",
+      "Ucho „zatkane” po locie lub katarze: żuj gumę, ziewaj, przełykaj z zatkanym nosem (manewr wyrównujący).",
+      "Ból ucha u dorosłego bez infekcji bywa bólem... zęba lub stawu żuchwy — sprawdź, czy nie boli przy gryzieniu.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "TE21 i SI19 — tuż przed uchem, w dołku, który powstaje przy otwarciu ust.",
+        "TE5 — grzbiet przedramienia, trzy palce nad nadgarstkiem: kanał „obejmujący ucho”.",
+        "GB20 — gdy ból ucha idzie z karku i przewiania.",
+      ]},
+      { id: "akupunktura", items: [
+        "TE21, SI19, GB2 lokalnie (usta lekko otwarte przy nakłuciu), TE5, GB41 dystalnie.",
+      ], therapist: true },
+      { id: "oklady", items: [
+        "Klasyka babć z sensem: podgrzana, przekrojona cebula w gazie NA ucho (nigdy do środka) — lotne związki siarki działają przeciwbakteryjnie.",
+      ]},
+      { id: "ziola", items: [
+        "Napar z rumianku do picia i jako ciepły kompres wokół ucha.",
+      ]},
+    ],
+  },
+
+  oko: {
+    title: "Boli / piecze oko",
+    flags: [
+      "Nagłe pogorszenie widzenia, błyski, „zasłona” — pilnie okulista",
+      "Silny ból oka z nudnościami i widzeniem aureoli wokół świateł — możliwy ostry atak jaskry, natychmiast",
+      "Uraz oka, ciało obce metalowe, oparzenie chemiczne (płucz wodą 15 minut i jedź do lekarza)",
+    ],
+    now: [
+      "Reguła 20–20–20: co 20 minut patrz 20 sekund na coś oddalonego o 20 metrów — zmęczone oczy to zwykle zamrożona akomodacja.",
+      "Chłodny kompres z naparu świetlika lub rumianku na powieki, 10 minut.",
+      "Mrugaj świadomie — przy ekranie mrugamy 3× rzadziej i oko po prostu wysycha.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "BL2 — początek brwi od strony nosa; ST2 — na kości policzkowej pod źrenicą.",
+        "Taiyang i Yintang — domykają „obwód wokół oka”; masuj delikatnie, czystymi rękami.",
+      ]},
+      { id: "akupunktura", items: [
+        "BL2, ST2, Taiyang, GB20 (okolica oka lubi punkty karku), LV3 — wątroba „otwiera się w oczach”.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Świetlik łąkowy — przemywanie przestudzonym, przecedzonym naparem (świeży za każdym razem).",
+        "Do środka: borówka czarna, aronia — antocyjany dla siatkówki.",
+      ]},
+      { id: "dieta", items: [
+        "Luteina (jarmuż, szpinak, żółtko), omega-3 przy suchym oku — efekt po tygodniach, ale realny.",
+      ]},
+      { id: "praktyki", items: [
+        "Nawilżacz powietrza zimą; ekran poniżej linii oczu (mniejsza szpara powiek = wolniejsze parowanie łez).",
+      ]},
+    ],
+  },
+
+  kark: {
+    title: "Boli kark i szyja",
+    flags: [
+      "Sztywność karku z gorączką i światłowstrętem — pilnie do lekarza",
+      "Po urazie (stłuczka, upadek); drętwienie rąk z osłabieniem chwytu",
+    ],
+    now: [
+      "Ciepły okład lub prysznic na kark 15 minut — kark niemal zawsze lubi ciepło.",
+      "Uciskaj Luozhen (grzbiet dłoni, między kośćmi II i III palca) i JEDNOCZEŚNIE powoli kręć głową — klasyczny punkt „zaspanego karku”.",
+      "Co godzinę: 5 powolnych półkręgów głową, ściągnij łopatki w dół.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "GB20, GB21 (nie w ciąży), SI3 — krawędź dłoni pod małym palcem.",
+        "Poproś kogoś o kciuki na GB21 — to punkt stworzony do cudzych rąk.",
+      ]},
+      { id: "akupunktura", items: [
+        "GB20, GB21, SI3+BL62 (Du Mai), Huatuojiaji C3–C7, punkty Ashi; gua sha i bańki przesuwane — kark to ich królestwo.",
+      ], therapist: true },
+      { id: "automasaz", items: [
+        "Piłeczka tenisowa między łopatką a ścianą; rozcieranie mięśni podpotylicznych w leżeniu.",
+      ]},
+      { id: "oklady", items: [
+        "Woreczek z solą lub pestkami wiśni z piekarnika, 2× dziennie.",
+      ]},
+      { id: "praktyki", items: [
+        "Telefon do oczu, nie oczy do telefonu; monitor na wysokości wzroku. Głowa pochylona o 45° waży dla karku ponad 20 kg.",
+      ]},
+      { id: "totalna", items: [
+        "Kark sztywnieje od czujności: przed kim lub czym nie wolno Ci odwrócić głowy?",
+      ]},
+    ],
+  },
+
+  lokiec: {
+    title: "Boli łokieć / nadgarstek",
+    flags: [
+      "Deformacja po urazie, niemożność ruchu — możliwe złamanie",
+      "Nocne drętwienie palców (kciuk–serdeczny), wypadające przedmioty — cieśń nadgarstka, potrzebna diagnostyka",
+    ],
+    now: [
+      "Znajdź ruch, który boli najbardziej — i na tydzień go ogranicz (nie całą rękę, tylko ten ruch).",
+      "Świeży, ostry ból: chłodny okład 15 minut. Ból stary, tępy: ciepło.",
+      "Łokieć tenisisty: masuj kciukiem bolesne miejsce przy nadkłykciu poprzecznie do włókien, 2 minuty.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LI11 — koniec fałdu łokciowego; LI10 — dwa palce niżej na przedramieniu: para „łokciowa”.",
+        "TE5 i PC6 — po obu stronach nadgarstka, przy bólu nadgarstka.",
+      ]},
+      { id: "akupunktura", items: [
+        "Łokieć boczny: LI11, LI10, punkty Ashi, LI4; przyśrodkowy: HT3, SI8. Nadgarstek: TE4, PC7, Ashi; moksa przy przewlekłym.",
+      ], therapist: true },
+      { id: "masci", items: [
+        "Arnika na świeże, żywokost na przewlekłe — 2× dziennie.",
+      ]},
+      { id: "praktyki", items: [
+        "Izometria: napinaj bez ruchu (dłoń w blat) po 10 sekund — ścięgna goją się od obciążenia, nie od leżakowania.",
+        "Mysz pionowa lub podkładka pod nadgarstek przy pracy biurowej.",
+      ]},
+    ],
+  },
+
+  plecy: {
+    title: "Bolą plecy i krzyż",
+    flags: [
+      "Ból z zaburzeniem oddawania moczu/stolca lub drętwieniem krocza — natychmiast na SOR (zespół ogona końskiego)",
+      "Po upadku u seniora lub przy osteoporozie; ból z gorączką, nocny, niezależny od pozycji, z chudnięciem",
+      "Drętwienie nogi z opadaniem stopy",
+    ],
+    now: [
+      "Ruszaj się. Leżenie w łóżku pogarsza rokowanie zwykłego bólu krzyża — to jedna z najlepiej udowodnionych rzeczy w całej ortopedii. Spacer po mieszkaniu co godzinę.",
+      "Ciepło na lędźwie 20 minut (termofor, plaster rozgrzewający).",
+      "Pozycja ulgowa 90/90: na plecach, łydki na krześle, biodra i kolana pod kątem prostym — 10 minut.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "BL40 — środek dołu podkolanowego; stara reguła głosi, że krzyż leczy się przez to miejsce.",
+        "Yaotongxue — dwa punkty na grzbiecie dłoni: uciskaj i JEDNOCZEŚNIE krąż biodrami — punkt ostrego postrzału.",
+        "SI3 — krawędź dłoni: otwiera kanał biegnący wzdłuż całego kręgosłupa.",
+      ]},
+      { id: "akupunktura", items: [
+        "BL23–BL25, punkty Ashi, BL40, GB30 przy promieniowaniu; SI3+BL62; moksa na lędźwie przy bólu „od zimna”; bańki na mięśnie przykręgosłupowe.",
+      ], therapist: true },
+      { id: "oklady", items: [
+        "Woreczek z solą, termofor, ciepła kąpiel; przy świeżym urazie pierwsze 1–2 dni chłodno.",
+      ]},
+      { id: "masci", items: [
+        "Rozgrzewające (kapsaicyna — realne dowody przy przewlekłym bólu krzyża), żywokost.",
+      ]},
+      { id: "praktyki", items: [
+        "Codzienny spacer 30 minut robi dla krzyża więcej niż niejeden zabieg; „kocie grzbiety” rano.",
+      ]},
+      { id: "totalna", items: [
+        "Krzyż to podpora i finanse w mowie ciała: co Cię ostatnio „złamało” albo kto przestał Cię podpierać?",
+      ]},
+    ],
+  },
+
+  biodro: {
+    title: "Boli biodro",
+    flags: [
+      "Po upadku: niemożność obciążenia nogi, noga skrócona i wykręcona — podejrzenie złamania szyjki, nie wstawaj, wezwij pomoc",
+      "Ból nocny z chudnięciem; ból biodra u dziecka z gorączką",
+    ],
+    now: [
+      "Śpij na zdrowym boku z poduszką między kolanami — boczne biodro (krętarz) najbardziej nienawidzi leżenia na sobie.",
+      "Ciepło na pachwinę lub bok biodra 15 minut.",
+      "Piłeczka tenisowa pod pośladek na siedząco, powolne kółka — mięsień gruszkowaty często udaje biodro.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "GB30 — środek pośladka (najgłębszy punkt ciała — dlatego piłeczka zamiast palca).",
+        "GB34 — pod głową strzałki: punkt ścięgien całej nogi; GB29 z boku biodra.",
+      ]},
+      { id: "akupunktura", items: [
+        "GB30 (długa igła), GB29, GB34, BL54, punkty Ashi krętarza; przy „zimnym” biodrze moksa pośrednia.",
+      ], therapist: true },
+      { id: "masci", items: [
+        "Żywokost wieczorem pod ciepły kompres; rozgrzewająca przed spacerem.",
+      ]},
+      { id: "praktyki", items: [
+        "„Muszla”: leżąc na boku, kolana zgięte, unoś górne kolano jak otwierającą się muszlę, 3×10 — pośladek średni to amortyzator biodra.",
+      ]},
+      { id: "dieta", items: [
+        "Przy zmianach zwyrodnieniowych: kurkuma z pieprzem, tłuste ryby, mniej cukru — stan zapalny da się przygasić od kuchni.",
+      ]},
+    ],
+  },
+
+  stopa: {
+    title: "Boli stopa / pięta",
+    flags: [
+      "Nagły ból z „trzaskiem” i niemożnością stanięcia na palcach — możliwe zerwanie ścięgna Achillesa",
+      "Każda rana stopy u osoby z cukrzycą — do lekarza, nie na domowe metody",
+    ],
+    now: [
+      "Pięta rano przy pierwszych krokach? Zanim wstaniesz, pociągnij palce stóp ku sobie i krąż stopą 2 minuty — rozciągasz powięź, zanim ją obciążysz.",
+      "Roluj podeszwę zamrożoną butelką wody 5 minut, 2× dziennie.",
+      "Rozciągnij łydkę o ścianę 3×30 sekund — pięta boli, bo łydka ciągnie.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "KI1 — środek podeszwy: masuj kciukiem, ale okolicę bolącej pięty omijaj przy ostrym zapaleniu.",
+        "BL57 — brzusiec łydki: to on trzyma powięź na smyczy.",
+      ]},
+      { id: "akupunktura", items: [
+        "Punkty Ashi pięty ostrożnie, BL57, KI3, BL60 (para „obejmująca” Achillesa); moksa przy przewlekłej ostrodze.",
+      ], therapist: true },
+      { id: "masci", items: [
+        "Żywokost na noc; arnika po długim dniu na nogach.",
+      ]},
+      { id: "praktyki", items: [
+        "Buty z lekko uniesioną piętą na czas leczenia; boso po miękkim, nie po płytkach.",
+      ]},
+    ],
+  },
+
+  miesnie: {
+    title: "Bolą mięśnie",
+    flags: [
+      "Ciemny (herbaciany) mocz po ekstremalnym wysiłku — pilnie do lekarza",
+      "Narastający obrzęk i stwardnienie jednej grupy mięśni z silnym bólem",
+    ],
+    now: [
+      "Świeże naciągnięcie: chłodno, ucisk, wyżej. Zakwasy: odwrotnie — ciepło i lekki ruch.",
+      "Najlepszy środek na zakwasy to spacer albo lekkie powtórzenie wczorajszego ruchu — krew wypłukuje to, co boli.",
+      "Ciepła kąpiel z magnezową solą Epsom 15 minut.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Sok z wiśni cierpkiej przed i po wysiłku — realnie zmniejsza bolesność w badaniach u sportowców.",
+        "Imbir 2 g dziennie działa na zakwasy porównywalnie do łagodnych leków przeciwzapalnych.",
+      ]},
+      { id: "masci", items: [
+        "Arnika na świeże stłuczenia mięśni; rozgrzewające przed wysiłkiem, nie po.",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez przy skłonności do skurczów; białko 1,6 g/kg przy regularnym treningu.",
+      ]},
+      { id: "praktyki", items: [
+        "Rolowanie wałkiem — 60 sekund na grupę; ból rozcierania ma być „przyjemnie paskudny”, nie ostry.",
+      ]},
+    ],
+  },
+
+  brzuch: {
+    title: "Boli brzuch",
+    flags: [
+      "Brzuch twardy jak deska, ból narastający, gorączka — pilnie (możliwe zapalenie otrzewnej)",
+      "Ból wędrujący do prawego dołu biodrowego z gorączką i nudnościami — wyrostek: nie grzej termoforem, jedź do lekarza",
+      "Krew w stolcu, silny ból u ciężarnej, ból z zatrzymaniem gazów i stolca",
+    ],
+    now: [
+      "Skurczowy, „wiatrowy” ból: ciepły termofor 15 minut i pozycja embrionalna na lewym boku.",
+      "Napar: rumianek pół na pół z miętą, małymi łykami.",
+      "Masuj brzuch dłonią zgodnie z ruchem wskazówek zegara — to kierunek pracy jelita grubego, masujesz „z prądem”.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "ST36 — cztery palce pod rzepką: uniwersalny punkt brzucha („trzy mile” — po jego masażu wędrowiec miał iść jeszcze trzy mile).",
+        "PC6 przy nudnościach, CV12 delikatnie między pępkiem a mostkiem.",
+      ]},
+      { id: "akupunktura", items: [
+        "ST36, CV12, ST25, SP4+PC6; zimno w środku (ulga po cieple): moksa na CV8 przez sól lub imbir — klasyka.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Rumianek — rozkurczowo i przeciwzapalnie; koper włoski przy wzdęciu; mięta przy skurczach (ale nie przy zgadze).",
+      ]},
+      { id: "dieta", items: [
+        "Na czas bólu: gotowany ryż, marchew, sucharki, banan; odstaw surowe, smażone, nabiał i kawę na 2 dni.",
+      ]},
+      { id: "totalna", items: [
+        "Brzuch trawi też sytuacje: co ostatnio „leży Ci na żołądku”?",
+      ]},
+    ],
+  },
+
+  zoladek: {
+    title: "Boli żołądek / niestrawność",
+    flags: [
+      "Ból „sztyletowy”, nagły, z twardym brzuchem — pilnie",
+      "Smoliste stolce lub fusowate wymioty (krwawienie); ból z chudnięciem; ból w klatce z dusznością — najpierw wyklucz serce",
+    ],
+    now: [
+      "Po przejedzeniu: 15 minut spaceru robi więcej niż leżenie — żołądek pracuje w pionie.",
+      "Napar z imbiru albo mięty (mięta tylko jeśli nie masz zgagi).",
+      "Uciskaj PC6 i ST36 po 2 minuty.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "PC6, ST36, CV12 — trójka żołądkowa; masuj CV12 dopiero godzinę po jedzeniu.",
+      ]},
+      { id: "akupunktura", items: [
+        "CV12, ST36, PC6, SP4; zastój pokarmu: ST44, wewnętrzny Neiting; zimno żołądka: moksa CV12.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Siemię lniane kisiel przed posiłkami przy „wrażliwym” żołądku.",
+        "Goryczki (piołun, mniszek, centuria) 15 minut przed jedzeniem, gdy jedzenie „stoi” — gorzki smak uruchamia soki trawienne.",
+      ]},
+      { id: "dieta", items: [
+        "Mniejsze porcje, dokładne gryzienie (trawienie zaczyna się w ustach), bez popijania litrem do posiłku.",
+        "Na 2 tygodnie odstaw: smażone, ostre, alkohol, kawę na czczo.",
+      ]},
+      { id: "totalna", items: [
+        "Żołądek to konflikt „kęsa nie do strawienia” — z czym się nie godzisz, a co codziennie przełykasz?",
+      ]},
+    ],
+  },
+
+  miesiaczka: {
+    title: "Bolesna miesiączka",
+    flags: [
+      "Ból nagle inny niż zwykle, jednostronny, z omdleniem — pilnie (ciąża pozamaciczna, skręt torbieli)",
+      "Krwotok (podpaska/tampon na godzinę przez kilka godzin); gorączka; ból narastający z cyklu na cykl — endometrioza wymaga diagnozy, nie cierpliwości",
+    ],
+    now: [
+      "Termofor na podbrzusze — w badaniach ciepło działa porównywalnie do ibuprofenu. Serio.",
+      "Uciskaj SP6 (cztery palce nad kostką wewnętrzną) po 2 minuty na każdej nodze.",
+      "Imbir: pół łyżeczki sproszkowanego 3–4× dziennie w pierwsze dni — w badaniach zbliżony do leków przeciwbólowych.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "SP6 — najważniejszy punkt kobiecy (nie w ciąży!); SP8 — punkt ratunkowy ostrego bólu miesiączkowego, dłoń niżej niż SP6.",
+        "LV3 przy bólu z rozdrażnieniem i tkliwością piersi; CV4 pod pępkiem, z ciepłą dłonią.",
+      ]},
+      { id: "akupunktura", items: [
+        "Zastój Qi i krwi: SP6, SP8, LV3, CV4, SP10; zimno w macicy: moksa CV4/CV6 — jedna z najwdzięczniejszych moks w praktyce.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Kalina koralowa (cramp bark — nazwa mówi wszystko) — rozkurcza macicę.",
+        "Krwawnik przy obfitych, liść maliny w drugiej połowie cyklu, melisa na napięcie przedmiesiączkowe.",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez od tygodnia przed miesiączką; witamina B1 100 mg dziennie — duże badanie wykazało wyraźne zmniejszenie bólu; omega-3.",
+      ]},
+      { id: "dieta", items: [
+        "W dni bólu mniej soli, kawy i alkoholu; ciepłe posiłki — zimne jedzenie to w TCM prosta droga do „zimnej macicy”.",
+      ]},
+      { id: "totalna", items: [
+        "Cykl to comiesięczne rozliczenie z kobiecością: co w Twoim życiu kobiety domaga się teraz uwagi?",
+      ]},
+    ],
+  },
+
+  pecherz: {
+    title: "Piecze przy oddawaniu moczu",
+    flags: [
+      "Gorączka, dreszcze, ból w lędźwiach — infekcja mogła wejść na nerki, pilnie do lekarza",
+      "Krew w moczu; objawy u mężczyzny, dziecka lub w ciąży — zawsze lekarz, nie domowe metody",
+      "Brak poprawy po 24–48 godzinach — potrzebny będzie antybiotyk; zioła grają na czas, nie zastępują leczenia",
+    ],
+    now: [
+      "Pij dużo, częściej niż zwykle — mocz ma fizycznie wypłukiwać bakterie. Nie wstrzymuj.",
+      "Termofor na podbrzusze łagodzi parcie i pieczenie.",
+      "D-mannoza: 2 g w wodzie co kilka godzin — cukier, do którego E. coli przykleja się chętniej niż do ściany pęcherza, po czym spływa z moczem.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Liść mącznicy lub borówki brusznicy — krótko, 3–5 dni (nie w ciąży).",
+        "Pokrzywa, skrzyp — moczopędnie, jako herbata tła; nasiadówka z rumianku przy pieczeniu ujścia.",
+      ]},
+      { id: "akupresura", items: [
+        "CV3 — cztery palce pod pępkiem, delikatnie; SP6 i KI3 — para wzmacniająca dolny ogrzewacz.",
+      ]},
+      { id: "akupunktura", items: [
+        "Wilgoć-gorąco pęcherza: CV3, SP9, SP6, BL28; nawracające na tle niedoboru: KI3, CV4 z moksą po ustąpieniu ostrego stanu.",
+      ], therapist: true },
+      { id: "dieta", items: [
+        "Odstaw na czas infekcji kawę, alkohol i ostre — drażnią pęcherz; żurawina działa raczej zapobiegawczo niż leczniczo.",
+      ]},
+      { id: "praktyki", items: [
+        "Profilaktyka nawrotów: mocz po współżyciu, podcieranie od przodu ku tyłowi, bawełniana bielizna, nie przemarzaj miednicy.",
+      ]},
+    ],
+  },
+
+  hemoroidy: {
+    title: "Hemoroidy",
+    flags: [
+      "Krew ciemna lub zmieszana ze stolcem, zmiana rytmu wypróżnień, chudnięcie — to wymaga diagnostyki, nie maści",
+      "Nagły, bardzo silny ból z twardym, sinym guzkiem — zakrzep; lekarz w ciągu 1–2 dni może pomóc od ręki",
+    ],
+    now: [
+      "Nasiadówka: ciepły odwar z kory dębu 15 minut, 2× dziennie.",
+      "Zdejmij telefon z tronu — siedzenie na sedesie ponad kilka minut to hodowla hemoroidów.",
+      "Maść lub okłady z oczaru wirginijskiego (aptecznego) na pieczenie i swędzenie.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Kora dębu i kora kasztanowca do nasiadówek — garbniki ściągają i tamują.",
+        "Rumianek przy podrażnieniu; czopki z nagietkiem między epizodami.",
+      ]},
+      { id: "suplementy", items: [
+        "Diosmina z hesperydyną — flawonoidy o zaskakująco solidnych badaniach: mniej krwawień i nawrotów.",
+      ]},
+      { id: "dieta", items: [
+        "Błonnik (babka płesznik + dużo wody), 2 litry płynów, śliwki — miękki stolec to połowa leczenia.",
+      ]},
+      { id: "praktyki", items: [
+        "Podnóżek pod stopy w toalecie (pozycja kuczna prostuje kanał odbytu); nie przyj na siłę; ruch zamiast wielogodzinnego siedzenia.",
+      ]},
+      { id: "akupunktura", items: [
+        "DU1 lokalnie (dla odważnych pacjentów), BL57 — klasyczny punkt hemoroidalny na łydce, DU20 (unoszenie opadniętego Qi).",
+      ], therapist: true },
+    ],
+  },
+
+  goraczka: {
+    title: "Gorączka",
+    flags: [
+      "Powyżej 40°C; drgawki; sztywność karku; wysypka, która NIE blednie pod dociśniętą szklanką — pilnie",
+      "Jakakolwiek gorączka u niemowlęcia poniżej 3 miesięcy; splątanie; odwodnienie (skąpy, ciemny mocz)",
+      "Gorączka wracająca ponad 3–4 dni",
+    ],
+    now: [
+      "Pij więcej niż zwykle — każdy stopień gorączki to dodatkowe pół litra zapotrzebowania.",
+      "Do ~38,5°C, jeśli znośna: nie zbijaj na siłę. Gorączka to broń odporności, nie usterka — wirusy mnożą się gorzej w cieple.",
+      "Dreszcze = ciało jeszcze grzeje: przykryj się. Poty i uczucie gorąca = szczyt minął: odkryj się i chłodź.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Napotna trójca: kwiat lipy, kwiat czarnego bzu, maliny (owoc i sok) — gorący napar, pod koc, wypocić.",
+        "Kora wierzby — naturalna „aspiryna” (nie u dzieci, nie z lekami przeciwzakrzepowymi).",
+      ]},
+      { id: "oklady", items: [
+        "Chłodne (nie lodowate) okłady na łydki — tylko gdy skóra gorąca i nie ma dreszczy; ściągają temperaturę o ok. pół stopnia.",
+      ]},
+      { id: "dieta", items: [
+        "Rosół, lekkie zupy, kompot — jedz mało, pij dużo; brak apetytu przy gorączce to fizjologia, nie problem.",
+      ]},
+      { id: "akupresura", items: [
+        "LI11 i LI4 — klasyczna para „oczyszczająca gorąco”.",
+      ]},
+      { id: "akupunktura", items: [
+        "LI11, LI4, DU14 (upust przy wysokiej), TE5 przy wietrze-gorącu z bólem gardła.",
+      ], therapist: true },
+    ],
+  },
+
+  przeziebienie: {
+    title: "Przeziębienie",
+    flags: [
+      "Duszność, ból w klatce przy oddychaniu, gorączka ponad tydzień",
+      "Pogorszenie po kilku dniach poprawy (możliwe nadkażenie bakteryjne)",
+    ],
+    now: [
+      "Pierwsza doba decyduje: cynk do ssania, rozgrzewający napar (imbir, czosnek, miód, cytryna) i wcześnie spać.",
+      "Owiń szyję szalikiem także w domu — w TCM „wiatr wchodzi przez kark”; GB20 i okolica to brama infekcji.",
+      "Sen jest lekiem: każda nieprzespana noc w infekcji to dzień choroby więcej.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Czarny bez (syrop/wyciąg z owoców) — w badaniach skracał infekcję o 2–4 dni.",
+        "Jeżówka na początku; lipa i malina napotnie; czosnek — najlepiej surowy, rozgnieciony, odczekać 10 minut przed zjedzeniem (wtedy tworzy się allicyna).",
+      ]},
+      { id: "plukanki", items: [
+        "Płukanie gardła solą, płukanie nosa solą fizjologiczną, inhalacja parowa z tymiankiem.",
+      ]},
+      { id: "dieta", items: [
+        "Rosół na wolnym ogniu — łagodzi objawy nie tylko ciepłem: badano to na poważnie. Dużo płynów, mało nabiału przy zaflegmieniu.",
+      ]},
+      { id: "suplementy", items: [
+        "Witamina D (szczególnie zimą), C 500–1000 mg, cynk krótko.",
+      ]},
+      { id: "akupresura", items: [
+        "LI4, GB20, LI20 przy zatkanym nosie; rozcieranie karku do ciepła.",
+      ]},
+      { id: "akupunktura", items: [
+        "Wiatr-zimno: LU7, LI4, GB20, BL12 z bańką lub moksą; wiatr-gorąco: LI11, DU14, LU10.",
+      ], therapist: true },
+    ],
+  },
+
+  kaszel: {
+    title: "Kaszel",
+    flags: [
+      "Duszność, świszczący oddech, krwioplucie; kaszel szczekający z dusznością u dziecka — pilnie",
+      "Kaszel trwający ponad 3 tygodnie — diagnostyka, koniec domowych metod",
+    ],
+    now: [
+      "Łyżka miodu — w badaniach u dzieci działała nie gorzej niż apteczne syropy przeciwkaszlowe.",
+      "Nawilż powietrze (mokry ręcznik na kaloryferze wystarczy) — suchy kaszel często jest kaszlem suchego powietrza.",
+      "Głowa wyżej do snu; woda pod ręką przy łóżku.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Kaszel SUCHY, drapiący: prawoślaz, ślaz, porost islandzki — śluzy powlekają i wyciszają.",
+        "Kaszel MOKRY: tymianek, pierwiosnek, podbiał krótkoterminowo — rozrzedzają i wykrztuszają. Nie tłumij mokrego kaszlu na noc syropami „stop” — wydzielina ma wyjść.",
+        "Czarna rzepa z miodem — klasyk: wydrążyć, zalać miodem, pić sok po kilku godzinach.",
+      ]},
+      { id: "plukanki", items: [
+        "Inhalacja z soli fizjologicznej (nebulizator) — najprostsza i bardzo skuteczna na nawilżenie dróg oddechowych.",
+      ]},
+      { id: "masci", items: [
+        "Smarowidło majerankowe lub gęsi smalec na klatkę i plecy na noc — stara szkoła, działa też przez rozgrzanie i masaż przy wcieraniu.",
+      ]},
+      { id: "oklady", items: [
+        "Ciepły okład na klatkę (nie przy gorączce); bańki klasyczne na plecy — u dorosłych, poza ostrą gorączką.",
+      ]},
+      { id: "akupresura", items: [
+        "LU7 — nad nadgarstkiem po stronie kciuka: punkt-mistrz kaszlu; CV17 — środek mostka, rozciera „ścisk” w klatce.",
+      ]},
+      { id: "akupunktura", items: [
+        "LU7, LU5, CV17, BL13 (z bańką); flegma: ST40; suchy nocny: LU9, KI6.",
+      ], therapist: true },
+    ],
+  },
+
+  katar: {
+    title: "Katar i zatoki",
+    flags: [
+      "Obrzęk powieki lub oczodołu, silny ból głowy z wysoką gorączką — pilnie",
+      "Katar jednostronny, cuchnący u dziecka — możliwe ciało obce w nosie",
+      "Objawy zatokowe ponad 10 dni bez poprawy",
+    ],
+    now: [
+      "Płukanie nosa solą fizjologiczną lub morską (butelka/dzbanek do irygacji) — metoda z najlepszymi dowodami ze wszystkich domowych.",
+      "Inhalacja parowa 10 minut; potem dopiero wydmuchaj — delikatnie, jedną dziurką naraz (mocne dmuchanie wtłacza wydzielinę do zatok).",
+      "Śpij z głową wyżej; termofor na policzki i czoło przy bólu zatok.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LI20 — skrzydełka nosa: masuj kółkami aż nos „puści”; Yintang i BL2 przy bólu czoła; LI4 do kompletu.",
+      ]},
+      { id: "akupunktura", items: [
+        "LI20, Yintang, BL2, ST2 (zatoki szczękowe), LI4, GB20; przewlekłe: dodać ST36, LU9.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Mieszanka „zatokowa”: kwiat bzu czarnego, werbena, pierwiosnek, goryczka, szczaw — ten zestaw znasz z apteki, ale działa też jako napar.",
+        "Majeranek — napar i maść majerankowa pod nos (obkurcza śluzówkę u dzieci od pokoleń).",
+      ]},
+      { id: "olejki", items: [
+        "Eukaliptus lub sosna do inhalacji; mięta odtyka doraźnie (mentol oszukuje receptory chłodu — nos „czuje się” drożny).",
+      ]},
+      { id: "dieta", items: [
+        "Ostre pomaga: imbir, chrzan, chili doraźnie udrażniają; ogranicz nabiał, jeśli zauważasz po nim więcej flegmy.",
+      ]},
+    ],
+  },
+
+  chrypka: {
+    title: "Chrypka",
+    flags: [
+      "Chrypka trwająca ponad 2–3 tygodnie — obowiązkowo laryngolog (struny głosowe trzeba obejrzeć), zwłaszcza u palących",
+      "Chrypka z dusznością lub trudnością przełykania",
+    ],
+    now: [
+      "Milcz — ale NIE szeptaj: szept męczy struny bardziej niż normalna mowa. Jeśli musisz mówić, mów cicho i normalnie.",
+      "Nawilżaj: para z miski, prysznic z parą, woda małymi łykami cały dzień.",
+      "Ciekawostka anatomiczna: płukanki nie sięgają strun głosowych (leżą niżej, za nagłośnią) — na struny działa inhalacja i nawodnienie, płukanka tylko na gardło.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Prawoślaz i ślaz — śluzy przez ssanie pastylek lub powolne picie maceratu.",
+        "Szałwia i tymianek — inhalacja; siemię lniane — kisiel łyk po łyku.",
+      ]},
+      { id: "plukanki", items: [
+        "Inhalacja z soli fizjologicznej lub emskiej 2× dziennie — to jest właściwa „płukanka” dla strun.",
+      ]},
+      { id: "dieta", items: [
+        "Odstaw: alkohol, papierosy (też bierne), chrząkanie (!) — zamiast chrząkać, przełknij ślinę lub łyk wody.",
+      ]},
+      { id: "akupresura", items: [
+        "LU10, KI6 — para „nawilżająca gardło”; CV22 w dołku szyjnym bardzo delikatnie.",
+      ]},
+      { id: "akupunktura", items: [
+        "LU7+KI6, LU10, CV22 ostrożnie; chrypka głosowa zawodowa: dodać HT5.",
+      ], therapist: true },
+    ],
+  },
+
+  nudnosci: {
+    title: "Nudności",
+    flags: [
+      "Nudności z bólem w klatce, dusznością, zimnym potem — u kobiet zawał często wygląda właśnie tak, dzwoń 112",
+      "Fusowate wymioty, wymioty z krwią; nudności z nagłym silnym bólem głowy; niemożność utrzymania płynów ponad dobę",
+    ],
+    now: [
+      "PC6: trzy palce nad nadgarstkiem, między ścięgnami — uciskaj 2–3 minuty. To najlepiej przebadany punkt akupresury w ogóle (opaski przeciw chorobie lokomocyjnej działają właśnie tu).",
+      "Imbir: świeży plaster do żucia, kandyzowany albo napar — dowody od ciąży po chemioterapię.",
+      "Małe łyki zimnego napoju, powolny oddech, chłodne powietrze na twarz.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "PC6 obustronnie; ST36 wzmacniająco; CV12 bardzo delikatnie.",
+      ]},
+      { id: "akupunktura", items: [
+        "PC6, ST36, CV12, SP4; nudności „wątrobowe” ze stresu: LV3, GB34.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Imbir (do 1 g dziennie w ciąży — skonsultuj przy lekach przeciwzakrzepowych), mięta w kroplach lub naparze, melisa gdy tło nerwowe.",
+      ]},
+      { id: "dieta", items: [
+        "Sucharki, ryż, banan, chłodne i bezwonne potrawy; jedz zanim zgłodniejesz — pusty żołądek nasila mdłości (klasyka ciążowa).",
+      ]},
+    ],
+  },
+
+  biegunka: {
+    title: "Biegunka",
+    flags: [
+      "Krew lub śluz w stolcu, wysoka gorączka, silny ból; objawy odwodnienia (skąpy mocz, suchość, senność) — u dzieci i seniorów szybko groźne",
+      "Biegunka ponad 3 dni; w trakcie/po antybiotyku; po powrocie z tropików",
+    ],
+    now: [
+      "Nawadnianie to całe leczenie: domowy płyn — 1 litr przegotowanej wody + 6 płaskich łyżeczek cukru + pół łyżeczki soli. Pij łyk po łyku, stale.",
+      "Nie hamuj biegunki na siłę pierwszej doby — organizm wypłukuje przyczynę.",
+      "Suszone czarne jagody: 2 łyżki żuć lub odwar — garbniki hamują, klasyka polskiego zielarstwa.",
+    ],
+    modules: [
+      { id: "dieta", items: [
+        "Marchwianka (zupa Moro): 500 g marchwi gotować godzinę, zmiksować, osolić — przepis wiedeńskiego pediatry z 1908 r., który drastycznie obniżył śmiertelność niemowląt; cukry z marchwi blokują przyleganie bakterii do jelita.",
+        "Dalej: ryż, kleik, banan, tarte jabłko (pektyny); unikaj mleka, surowizny, kawy i soków.",
+      ]},
+      { id: "ziola", items: [
+        "Kora dębu odwar (krótko), mięta na skurcze, rumianek osłonowo.",
+      ]},
+      { id: "suplementy", items: [
+        "Saccharomyces boulardii — drożdżak probiotyczny o solidnych badaniach, skraca biegunkę o ok. dobę; elektrolity z apteki zamiast domowych, jeśli wolisz.",
+      ]},
+      { id: "akupresura", items: [
+        "ST36 i ST25 (dwa palce w bok od pępka) — masuj ciepłą dłonią.",
+      ]},
+      { id: "akupunktura", items: [
+        "ST25, ST36, SP9 (wilgoć); zimna biegunka poranna: moksa CV8 przez sól — spektakularna klasyka.",
+      ], therapist: true },
+    ],
+  },
+
+  zaparcie: {
+    title: "Zaparcie",
+    flags: [
+      "Brak stolca I gazów z narastającym bólem i wzdęciem — możliwa niedrożność, pilnie",
+      "Zaparcie na przemian z biegunką, krew, chudnięcie, nagła zmiana rytmu po 45. roku życia — diagnostyka",
+    ],
+    now: [
+      "Szklanka ciepłej wody zaraz po przebudzeniu — uruchamia odruch żołądkowo-okrężniczy (jelito budzi się razem z żołądkiem).",
+      "Podnóżek pod stopy w toalecie: kolana wyżej niż biodra prostują jelito — pozycja kuczna to fabryczne ustawienie człowieka.",
+      "2 kiwi albo 5 suszonych śliwek dziennie — oba przetestowane w badaniach klinicznych, śliwki wygrywały z błonnikiem aptecznym.",
+    ],
+    modules: [
+      { id: "dieta", items: [
+        "Błonnik zwiększaj STOPNIOWO i zawsze z wodą (błonnik bez wody = korek); siemię lniane łyżka dziennie namoczona.",
+        "Kawa rano legalnie pomaga — pobudza perystaltykę niezależnie od kofeiny.",
+      ]},
+      { id: "ziola", items: [
+        "Babka płesznik — łyżeczka na dużą szklankę wody, potem druga szklanka wody.",
+        "Senes/kruszyna tylko doraźnie, maksymalnie kilka dni — jelito przyzwyczaja się i rozleniwia.",
+      ]},
+      { id: "akupresura", items: [
+        "Masaż brzucha zgodnie z zegarem 5 minut dziennie; ST25 uciskaj oddechem (wdech — nacisk, wydech — zwolnij); TE6 na przedramieniu — klasyczny punkt zaparcia.",
+      ]},
+      { id: "akupunktura", items: [
+        "ST25, TE6, ST36, KI6 (suchość jelit u starszych); zastój Qi: LV3, GB34.",
+      ], therapist: true },
+      { id: "praktyki", items: [
+        "Ruch = perystaltyka: 20 minut spaceru po posiłku; nie ignoruj pierwszego porannego sygnału — odkładany, słabnie.",
+      ]},
+    ],
+  },
+
+  wzdecia: {
+    title: "Wzdęcia",
+    flags: [
+      "Wzdęcie narastające z bólem i zatrzymaniem gazów i stolca — pilnie",
+      "Przewlekłe wzdęcie z chudnięciem lub anemią — diagnostyka (celiakia, SIBO)",
+    ],
+    now: [
+      "Napar: koper włoski + kminek + anyż (rozgnieć nasiona przed zalaniem) — wiatropędna święta trójca.",
+      "10 minut spaceru — gazy przesuwają się w ruchu, nie w fotelu.",
+      "Masaż brzucha zgodnie z zegarem, potem kolana do klatki w leżeniu (pozycja o wdzięcznej jodze nazwie „uwalniającej wiatr”).",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Mięta (jeśli bez zgagi), rumianek, melisa — gdy brzuch „nerwowy”; imbir przy uczuciu pełności.",
+      ]},
+      { id: "dieta", items: [
+        "Jedz wolno, nie rozmawiaj z pełnymi ustami, odstaw gumy i napoje gazowane — połykane powietrze to połowa wzdęć.",
+        "Na próbę 2 tygodnie mniej: cebuli, czosnku, kapustnych, strączków, jabłek — jeśli pomoże, wprowadzaj po jednym z powrotem (tropienie FODMAP).",
+        "Strączki: mocz przez noc, gotuj z majerankiem i kminkiem, odlej pierwszą wodę.",
+      ]},
+      { id: "akupresura", items: [
+        "ST36, ST25, SP15; CV6 dwa palce pod pępkiem — punkt „morza Qi”.",
+      ]},
+      { id: "akupunktura", items: [
+        "ST25, ST36, SP15, CV6, LV3 (zastój Qi to najczęstszy wzorzec wzdęć); flegma-wilgoć: ST40, SP9.",
+      ], therapist: true },
+    ],
+  },
+
+  zawroty: {
+    title: "Zawroty głowy",
+    flags: [
+      "Z podwójnym widzeniem, bełkotliwą mową, osłabieniem ręki/nogi, opadniętym kącikiem ust — udar, 112",
+      "Z utratą przytomności, kołataniem lub bólem w klatce; z nagłą jednostronną głuchotą",
+    ],
+    now: [
+      "Usiądź, oprzyj się, wpatrz w jeden nieruchomy punkt — wzrok kotwiczy błędnik.",
+      "Zawrót przy obracaniu w łóżku/schylaniu, krótki, wirowy? To zwykle łagodne położeniowe zawroty (kryształki w błędniku) — leczy je jeden manewr repozycyjny u fizjoterapeuty, często od ręki.",
+      "Szklanka wody i coś słonego — u młodych kobiet za zawrotami często stoi po prostu niskie ciśnienie i odwodnienie.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "PC6 przy zawrotach z nudnościami; GB20 przy „ciężkiej głowie” od karku.",
+      ]},
+      { id: "akupunktura", items: [
+        "GB20, DU20, PC6; flegma (głowa jak w waciance): ST40, CV12; niedobór (zawrót przy zmęczeniu): ST36, SP6, DU20 z moksą.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Imbir — przebadany także przy zawrotach błędnikowych; miłorząb przy przewlekłych u starszych (nie z lekami przeciwzakrzepowymi).",
+      ]},
+      { id: "praktyki", items: [
+        "Wstawaj dwuetapowo: usiądź, policz do pięciu, dopiero wstań; unikaj gwałtownych skrętów głowy przy sprzątaniu wysokich półek.",
+      ]},
+    ],
+  },
+
+  kolatanie: {
+    title: "Kołatanie serca",
+    flags: [
+      "Z bólem w klatce, dusznością, omdleniem lub zasłabnięciem — 112",
+      "Puls kompletnie niemiarowy, chaotyczny („serce jak worek żab”) — możliwe migotanie przedsionków, do lekarza szybko, nie na zioła",
+    ],
+    now: [
+      "Manewr Valsalvy: weź wdech, zatkaj nos i spróbuj mocno wydmuchać powietrze przy zamkniętych ustach przez 15 sekund — przerywa wiele napadowych częstoskurczów.",
+      "Zimna woda na twarz albo zanurzenie twarzy w misce — odruch nurkowania zwalnia serce.",
+      "Usiądź, wydłuż wydech (4 wdech / 8 wydech) przez 3 minuty.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "PC6 i HT7 — para „uspokajająca Shen”; CV17 rozcieraj przy ścisku w mostku.",
+      ]},
+      { id: "akupunktura", items: [
+        "PC6, HT7, CV17, ucho-Shenmen; niedobór Yin z kołataniem nocnym: HT6, KI6.",
+      ], therapist: true },
+      { id: "dieta", items: [
+        "Trzej podejrzani do odstawienia na próbę: kofeina, alkohol (także „wczorajszy” — holiday heart), odwodnienie.",
+        "Duży posiłek też potrafi kołatać — nerw błędny sąsiaduje z żołądkiem.",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez + potas (potas ostrożnie przy lekach); przy skurczach dodatkowych często sam magnez wycisza.",
+      ]},
+      { id: "ziola", items: [
+        "Głóg — regularnie, jako zioło tła; melisa przy kołataniu nerwowym.",
+      ]},
+    ],
+  },
+
+  obrzeki: {
+    title: "Obrzęki nóg",
+    flags: [
+      "Obrzęk JEDNEJ nogi z bólem i uciepleniem — możliwa zakrzepica, pilnie, nie masuj",
+      "Obrzęki z dusznością, zwłaszcza nocną — serce, do lekarza; nagły obrzęk twarzy lub ust — 112",
+    ],
+    now: [
+      "Nogi powyżej serca na 20 minut (poduszki pod łydki, nie tylko stopy).",
+      "Chłodny prysznic od stóp w górę, w stronę serca.",
+      "„Pompka”: krążenie stopami i naprzemienne zginanie palców — łydka to drugie serce, ale trzeba ją włączyć.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Kasztanowiec (escyna) — najlepiej przebadane zioło żylne, doustnie lub w żelu.",
+        "Ruszczyk, nostrzyk — wzmacniają napięcie żył; pokrzywa i skrzyp łagodnie moczopędnie.",
+      ]},
+      { id: "dieta", items: [
+        "Mniej soli (obrzęki to często sód, nie woda); potas z warzyw; nie ograniczaj picia — paradoksalnie odwodnienie nasila zatrzymywanie wody.",
+      ]},
+      { id: "praktyki", items: [
+        "Przerwy w siedzeniu co godzinę; podkolanówki/pończochy uciskowe przy staniu i w podróży — proza życia, która działa najlepiej ze wszystkiego.",
+      ]},
+      { id: "akupresura", items: [
+        "SP9 — punkt „odprowadzania wilgoci” pod kolanem od wewnątrz; SP6, KI3 wieczorem.",
+      ]},
+      { id: "akupunktura", items: [
+        "SP9, SP6, ST36, KI3; niedobór Yang śledziony/nerek: moksa CV4, KI3.",
+      ], therapist: true },
+    ],
+  },
+
+  skurcze: {
+    title: "Skurcze łydek",
+    flags: [
+      "Skurcz z obrzękiem i uciepleniem jednej łydki — wyklucz zakrzepicę",
+      "Skurcze z postępującym osłabieniem mięśni lub przy nowym leku (statyny, moczopędne) — powiedz lekarzowi",
+    ],
+    now: [
+      "W trakcie skurczu: wyprostuj kolano i pociągnij palce stopy KU SOBIE (albo stań na chłodnej podłodze i dociśnij piętę).",
+      "Ciekawostka z badań: łyk soku z ogórków kiszonych przerywa skurcz w ~1,5 minuty — szybciej, niż elektrolity zdążyłyby się wchłonąć; kwaśny bodziec w gardle odruchowo wycisza neurony skurczu.",
+      "Po skurczu: rozmasuj łydkę i przyłóż ciepło.",
+    ],
+    modules: [
+      { id: "praktyki", items: [
+        "Rozciąganie łydek 3×30 sekund przed snem — najskuteczniejsza profilaktyka nocnych skurczów.",
+        "Nawodnienie w ciągu dnia; luźna kołdra przy stopach (naciągnięta stopa w dół prowokuje skurcz).",
+      ]},
+      { id: "suplementy", items: [
+        "Magnez wieczorem (cytrynian/glicynian) — dowody umiarkowane, praktyka życzliwa; potas i wapń z diety.",
+      ]},
+      { id: "akupresura", items: [
+        "BL57 — środek brzuśca łydki: masuj głęboko między skurczami; KI1 rozcieraj przed snem.",
+      ]},
+      { id: "akupunktura", items: [
+        "BL57, BL40, KI3, SP6; niedobór krwi wątroby (skurcze + suche oczy + blade paznokcie): dodać LV8, ST36.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Napar z melisy wieczorem, gdy skurcze budzą; woda wysokozmineralizowana magnezowa jako codzienny nawyk.",
+      ]},
+    ],
+  },
+
+  opryszczka: {
+    title: "Opryszczka",
+    flags: [
+      "Opryszczka przy OKU lub na czubku nosa — pilnie okulista (rogówka w niebezpieczeństwie)",
+      "Rozległa, z gorączką, u osoby z obniżoną odpornością; nigdy nie całuj noworodka z aktywną opryszczką",
+    ],
+    now: [
+      "Łap ją na etapie mrowienia: kostka lodu w chusteczce na 5 minut potrafi zdusić wykwit w zarodku.",
+      "Krem z melisy — wyciąg z melisy ma badania kliniczne w opryszczce; nakładaj patyczkiem, nie palcem.",
+      "Nie dotykaj, nie zdrapuj, osobny ręcznik — wirus świetnie podróżuje na palcach (oko!).",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Melisa krem 4× dziennie; propolis maść — badania porównywalne z acyklowirem przy wczesnym starcie.",
+      ]},
+      { id: "suplementy", items: [
+        "Lizyna 1000 mg przy nawrotach; cynk; witamina D, jeśli nawroty częste.",
+      ]},
+      { id: "dieta", items: [
+        "Wirus lubi argininę: przy nawrotach ogranicz orzechy, migdały, czekoladę i pestki, a dołóż nabiał i ryby (lizyna) — rzadko znana, praktyczna dźwignia.",
+      ]},
+      { id: "praktyki", items: [
+        "Nawroty lubią: przemęczenie, słońce bez filtra na ustach, miesiączkę, stres — sztyft SPF na usta latem i na nartach.",
+      ]},
+    ],
+  },
+
+  wysypka: {
+    title: "Wysypka i pokrzywka",
+    flags: [
+      "Z obrzękiem ust, języka, gardła lub dusznością — anafilaksja, 112, natychmiast",
+      "Wysypka, która NIE blednie pod dociśniętą szklanką, zwłaszcza z gorączką — pilnie",
+      "Pokrzywka nawracająca ponad 6 tygodni — diagnostyka",
+    ],
+    now: [
+      "Chłodny prysznic lub zimny okład — i żadnej gorącej wody: gorąco uwalnia kolejną histaminę i błędne koło się kręci.",
+      "Luźna bawełna zamiast syntetyków; obetnij paznokcie krótko, drapanie napędza wysyp.",
+      "Zapisz od razu: co jadłeś, nowy kosmetyk/proszek, lek, ukąszenie — pokrzywka ma krótką pamięć, Ty miej notes.",
+    ],
+    modules: [
+      { id: "oklady", items: [
+        "Kąpiel z owsa koloidalnego (zmiel płatki na mąkę, wsyp do letniej wody) — klasyka łagodzenia świądu o dobrej reputacji naukowej.",
+        "Okład z chłodnego naparu rumianku lub czarnej herbaty (garbniki).",
+      ]},
+      { id: "ziola", items: [
+        "Fiołek trójbarwny i bratek do picia — tradycyjne „zioła skórne”; pokrzywa paradoksalnie działa przeciwhistaminowo.",
+      ]},
+      { id: "dieta", items: [
+        "Przy nawrotach trop histaminę: dojrzewające sery, wino, wędliny, ryby wędzone, pomidory, truskawki — dziennik pokarmowy przez 2 tygodnie.",
+      ]},
+      { id: "akupresura", items: [
+        "LI11 i SP10 — klasyczna para „chłodząca krew” przy swędzącej skórze.",
+      ]},
+      { id: "akupunktura", items: [
+        "LI11, SP10, SP6, GB31 (świąd); wiatr-gorąco: DU14, LI4.",
+      ], therapist: true },
+    ],
+  },
+
+  jeczmien: {
+    title: "Jęczmień na oku",
+    flags: [
+      "Obrzęk CAŁEJ powieki z gorączką lub pogorszeniem widzenia — pilnie",
+      "„Jęczmień”, który nie boli i siedzi tygodniami — to gradówka, wymaga okulisty; nawracające jęczmienie — sprawdź cukier",
+    ],
+    now: [
+      "Ciepły kompres 10 minut, 4× dziennie — to jest właściwe leczenie: ciepło upłynnia zatkaną wydzielinę gruczołu.",
+      "Nie wyciskaj. Nigdy. To mieszkanie obok mózgu.",
+      "Przerwa od soczewek i makijażu oczu do wygojenia.",
+    ],
+    modules: [
+      { id: "oklady", items: [
+        "Ciepły kompres z czystej ściereczki lub torebki (przestudzonej!) herbaty; po kompresie delikatny masaż powieki w stronę rzęs.",
+        "Słynne „pocieranie złotą obrączką” działało nie złotem, lecz ciepłem metalu potartego o sukno — fizyka, nie magia.",
+      ]},
+      { id: "ziola", items: [
+        "Świetlik do przemywań okolicy (przecedzony, świeży napar); rumianek ostrożnie — u uczulonych na astry drażni.",
+      ]},
+      { id: "praktyki", items: [
+        "Higiena brzegów powiek u nawrotowców: ciepły kompres + delikatne mycie brzegu powieki rozcieńczonym szamponem dziecięcym.",
+      ]},
+      { id: "akupunktura", items: [
+        "Klasyka: nakłucie/upust w punkcie na łopatce (strefa przykręgosłupowa Th1–3, poszukać grudki), LI4, ST44 — stara szkoła na nawracające jęczmienie.",
+      ], therapist: true },
+    ],
+  },
+
+  oparzenie: {
+    title: "Oparzenie",
+    flags: [
+      "Oparzenie twarzy, dłoni, krocza, stawów; większe niż dłoń poszkodowanego; chemiczne, elektryczne, u małego dziecka — lekarz",
+      "Chrypka lub kaszel po pożarze/parze — oparzenie wziewne, pilnie",
+    ],
+    now: [
+      "Chłodna (nie lodowata) bieżąca woda przez 20 MINUT — to najważniejsze zdanie tej karty; 20 minut chłodzenia zmniejsza głębokość oparzenia. Nie lód.",
+      "Zdejmij pierścionki i zegarek, zanim spuchnie.",
+      "Żadnego masła, spirytusu, pasty do zębów — mity, które smażą dalej. Po schłodzeniu: luźno folia spożywcza jako czysty opatrunek (standard ratownictwa).",
+    ],
+    modules: [
+      { id: "masci", items: [
+        "Pantenol na powierzchowne zaczerwienienie po schłodzeniu; pęcherzy nie przekłuwaj.",
+        "Miód (najlepiej apteczny, medyczny) na drobne oparzenia — dowody na szybsze gojenie ma zaskakująco mocne.",
+      ]},
+      { id: "ziola", items: [
+        "Aloes — żel z liścia lub apteczny — po wstępnym zagojeniu; nagietek maść na etapie odbudowy skóry.",
+      ]},
+      { id: "dieta", items: [
+        "Przy większym oparzeniu ciało buduje skórę: więcej białka, wit. C i cynku przez 2 tygodnie.",
+      ]},
+      { id: "praktyki", items: [
+        "Świeża blizna nie znosi słońca przez rok — filtr 50 albo plaster, inaczej przebarwi się na stałe.",
+      ]},
+    ],
+  },
+
+  stluczenie: {
+    title: "Stłuczenie i siniak",
+    flags: [
+      "Obrzęk narastający z twardością i bardzo silnym bólem, bledną/drętwieją palce — pilnie",
+      "Po uderzeniu w głowę: wymioty, narastająca senność, splątanie — SOR; siniaki „z niczego” w wielu miejscach — zbadaj krzepnięcie",
+    ],
+    now: [
+      "Pierwsze godziny: chłodny okład 15 minut (przez ściereczkę), przerwa, powtórka; kończyna wyżej.",
+      "Elastyczny, niezbyt ciasny ucisk na obrzęk.",
+      "Od 2.–3. dnia zamień zimno na ciepło — teraz krwiak trzeba rozprowadzić, nie hamować.",
+    ],
+    modules: [
+      { id: "masci", items: [
+        "Arnika — na stłuczenia i siniaki ma przyzwoite badania; żywokost od 2. doby na głębsze urazy.",
+      ]},
+      { id: "oklady", items: [
+        "Kapusta na noc na duże stłuczenia; okład z octu wodnego (łyżka na szklankę) — babcina klasyka na „rozejście się” siniaka.",
+      ]},
+      { id: "suplementy", items: [
+        "Bromelaina (enzym z ananasa) — przyspiesza wchłanianie krwiaków, lubiana przez chirurgów szczękowych; wit. C przy skłonności do siniaków.",
+      ]},
+      { id: "akupunktura", items: [
+        "Punkty Ashi wokół (nie w) krwiaka, SP10 („morze krwi”), lokalnie gua sha po 3. dobie na obrzeżach.",
+      ], therapist: true },
+    ],
+  },
+
+  ukaszenie: {
+    title: "Ukąszenie / użądlenie",
+    flags: [
+      "Obrzęk ust, języka, gardła, duszność, zawroty — anafilaksja, 112 (adrenalina, jeśli jest w domu)",
+      "Użądlenie w jamie ustnej; kilkadziesiąt użądleń naraz",
+      "Po kleszczu: powiększający się rumień (zwłaszcza z przejaśnieniem w środku) lub objawy grypowe do 30 dni — lekarz, to może być borelioza",
+    ],
+    now: [
+      "Żądło pszczoły wyskrob paznokciem lub kartą BOKIEM — nie łap pincetą za woreczek jadowy, bo go wyciśniesz.",
+      "Zimny okład 10 minut; przekrojona cebula przyłożona na użądlenie — enzymy rozkładają składniki jadu, babcina metoda z mechanizmem.",
+      "Kleszcza wyciągnij pęsetą tuż przy skórze, jednym ruchem, bez smarowania masłem; zdezynfekuj i ZAPISZ DATĘ w kalendarzu.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Liść babki lancetowatej roztarty w palcach na ukąszenie — polny klasyk na komary i pokrzywy, działa od razu.",
+        "Ocet jabłkowy na osę, soda na pszczołę — chemicznie eleganckie, w praktyce i tak wygrywa zimno.",
+      ]},
+      { id: "olejki", items: [
+        "Lawendowy — jeden z nielicznych do punktowego użycia bez rozcieńczenia, łagodzi świąd i odkaża.",
+      ]},
+      { id: "oklady", items: [
+        "Zimny okład lub kostka lodu w chusteczce; pasta z sody i wody na świąd.",
+      ]},
+      { id: "praktyki", items: [
+        "Po lesie: prysznic i przegląd ciała tego samego dnia (kleszcz zwykle wędruje godzinami, zanim się wbije — pachwiny, pachy, za uszami).",
+      ]},
+    ],
+  },
+
+  lek: {
+    title: "Lęk i napięcie",
+    flags: [
+      "Lęk z myślami rezygnacyjnymi — sięgnij po pomoc dziś (całodobowo: 116 123 lub 112)",
+      "Lęk uniemożliwiający pracę/wyjście z domu od tygodni; lęk z chudnięciem, kołataniem i potliwością — zbadaj też tarczycę",
+    ],
+    now: [
+      "5 minut wydłużonego wydechu (4 wdech / 8 wydech) — nerw błędny to hamulec, który masz zawsze przy sobie.",
+      "Wyrzuć lęki na papier: 10 minut pisania wszystkiego, co się kotłuje, bez cenzury — umysł przestaje żonglować, gdy widzi listę.",
+      "Wyjdź na 20 minut szybkiego marszu; ogranicz dziś newsy i przewijanie — lęk je zjada jak paliwo.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "Yintang — głaskanie kciukiem między brwiami w górę; HT7 i PC6 na nadgarstkach; KI1 lub bose stopy na podłodze — uziemienie dosłowne.",
+      ]},
+      { id: "akupunktura", items: [
+        "Yintang, HT7, PC6, DU20, ucho-Shenmen; niedobór Yin z niepokojem nocnym: HT6, KI6; flegma-ogień: PC5, ST40.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Kapsułki lawendowe (Silexan) — badania kliniczne na poziomie leków przeciwlękowych, bez uzależnienia.",
+        "Melisa, rumianek jako herbaty tła; ashwagandha obniża kortyzol w badaniach (nie w ciąży, ostrożnie przy chorobach tarczycy).",
+      ]},
+      { id: "oddech", items: [
+        "Codzienny „trening hamulca”: 10 minut oddechu 6/min obniża pobudliwość układu nerwowego na stałe, nie tylko doraźnie.",
+      ]},
+      { id: "dieta", items: [
+        "Kofeina i alkohol to dwaj najwierniejsi sponsorzy lęku; stabilny cukier (białko do śniadania) wyrównuje dzień.",
+      ]},
+      { id: "totalna", items: [
+        "Lęk to projekcja: ciało reaguje na film o przyszłości, nie na teraźniejszość. Pytanie: co się dzieje NAPRAWDĘ, tu i teraz, w tym pokoju?",
+      ]},
+    ],
+  },
+
+  zmeczenie: {
+    title: "Zmęczenie",
+    flags: [
+      "Zmęczenie z chudnięciem, gorączką, nocnymi potami lub narastające mimo snu — badania podstawowe (morfologia, TSH, ferrytyna, wit. D, glukoza) zamiast zgadywania",
+    ],
+    now: [
+      "10 minut światła dziennego zaraz po wstaniu — najtańszy regulator energii, jaki istnieje.",
+      "Szklanka wody: pierwszym objawem odwodnienia nie jest pragnienie, tylko właśnie zmęczenie i mgła.",
+      "Drzemka TAK, ale 20 minut i przed 15:00 — dłuższa budzi z „kaca sennego”.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Różeniec górski — adaptogen z badaniami akurat na zmęczenie i wypalenie; rano, nie wieczorem.",
+        "Żeń-szeń krótkimi kursami; pokrzywa przy podejrzeniu niedoboru żelaza (i stek raz w tygodniu).",
+      ]},
+      { id: "dieta", items: [
+        "Białko do śniadania zamiast samych węglowodanów — huśtawka cukrowa to huśtawka energii.",
+        "U kobiet z obfitymi miesiączkami zmęczenie = najpierw sprawdź ferrytynę, potem szukaj dalej.",
+      ]},
+      { id: "suplementy", items: [
+        "Witamina D od jesieni do wiosny; B12 przy diecie roślinnej; magnez przy napięciu.",
+      ]},
+      { id: "akupresura", items: [
+        "ST36 — punkt „trzech mil”: moksowany lub masowany codziennie to najstarszy tonik Wschodu; CV6 rozcieraj ciepłą dłonią.",
+      ]},
+      { id: "akupunktura", items: [
+        "ST36, CV6, CV4, DU20; niedobór Qi śledziony: SP6, BL20; moksa ST36 seriami — profilaktyka długowieczności w klasykach.",
+      ], therapist: true },
+      { id: "praktyki", items: [
+        "Sprawdź najpierw dług senny: tydzień kładzenia się o stałej porze bez budzika w weekend powie Ci więcej niż suplementy.",
+      ]},
+    ],
+  },
+
+  nastroj: {
+    title: "Obniżony nastrój",
+    flags: [
+      "Myśli rezygnacyjne lub „że lepiej by mnie nie było” — pomoc od razu: 116 123 (całodobowo, bezpłatnie) lub 112",
+      "Smutek i utrata radości niemal codziennie ponad 2 tygodnie — to sprawa dla specjalisty; domowe metody są wtedy wsparciem, nie leczeniem",
+    ],
+    now: [
+      "30 minut spaceru w świetle dnia — w badaniach regularny ruch działa na łagodne obniżenie nastroju porównywalnie do leków.",
+      "Skontaktuj się dziś z jednym człowiekiem — nastrój leczy się też przez innych ludzi, nie tylko w sobie.",
+      "Zrób jedną małą rzecz do końca (umyj okno, ugotuj zupę) — ukończenie czegokolwiek to mikrodawka sprawczości.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Szafran 30 mg dziennie — najciekawsze zioło nastrojowe ostatnich lat, kilkanaście badań klinicznych.",
+        "Dziurawiec działa, ALE to najgroźniejszy zielarski „mieszacz”: osłabia antykoncepcję i wiele leków, uczula na słońce — tylko po sprawdzeniu interakcji.",
+      ]},
+      { id: "praktyki", items: [
+        "Światło, ruch, ludzie, sen o stałych porach — nudna czwórka, która w metaanalizach wygrywa z niejednym specyfikiem.",
+        "Jesienią i zimą: lampa 10 000 luksów 30 minut rano, jeśli nastrój spada z dniem krótszym.",
+      ]},
+      { id: "suplementy", items: [
+        "Omega-3 z przewagą EPA (≥1 g), witamina D — dwa suplementy z realnymi metaanalizami w obniżonym nastroju.",
+      ]},
+      { id: "akupresura", items: [
+        "Yintang, HT7, DU20 (czubek głowy — punkt „stu spotkań”); rozcieranie CV17, gdy smutek siedzi w mostku.",
+      ]},
+      { id: "akupunktura", items: [
+        "DU20, Yintang, HT7, LV3+LI4 (cztery bramy — zastój Qi to najczęstszy wzorzec przygnębienia), CV17; niedobór: ST36, SP6.",
+      ], therapist: true },
+      { id: "totalna", items: [
+        "Obniżenie bywa hamulcem bezpieczeństwa: ciało wyłącza gaz, gdy długo jechałaś pod prąd. Pytanie: przed czym ten hamulec próbuje Cię zatrzymać?",
+      ]},
+    ],
+  },
+
+  zolc: {
+    title: "Pęcherzyk żółciowy — kolka",
+    subtitle: "Typowo: falowy ból pod prawym łukiem żebrowym po tłustym posiłku, promieniuje pod prawą łopatkę.",
+    flags: [
+      "Zażółcenie oczu lub skóry, ciemny mocz, odbarwiony stolec — kamień zablokował drogi żółciowe, pilnie",
+      "Ból + gorączka z dreszczami — zapalenie dróg żółciowych, to stan naglący, nie kolka do przeczekania",
+      "Atak trwający ponad 6 godzin bez przerwy albo z nieustannymi wymiotami — SOR",
+    ],
+    now: [
+      "Nic nie jedz — zwłaszcza żadnego tłuszczu: każdy gram tłuszczu to hormonalny rozkaz „kurcz się” dla pęcherzyka, który właśnie walczy z kamieniem.",
+      "Ciepły termofor na prawe podżebrze 20 minut — rozkurcza mięśniówkę dróg żółciowych.",
+      "Napar z mięty lub rumianku małymi łykami; pozycja, która daje ulgę (często na lewym boku z podkulonymi nogami).",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "GB34 — punkt tuż pod główką strzałki: klasyczny „mistrz” pęcherzyka; uciskaj mocno po prawej stronie.",
+        "Dannangxue — punkt-ciekawostka: leży 1–2 palce PONIŻEJ GB34 i jest tak swoisty, że jego samoistna bolesność bywa używana jako sygnał choroby pęcherzyka. Poszukaj najtkliwszego miejsca i masuj.",
+        "PC6 na towarzyszące nudności, LV3 na rozkurcz.",
+      ]},
+      { id: "akupunktura", items: [
+        "GB34, Dannangxue, LV3, PC6, CV12; wilgoć-gorąco wątroby i pęcherzyka: LV14, GB24 (punkty mu), ST36 wspierająco.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "W ATAKU tylko rozkurczowe: mięta, rumianek, melisa.",
+        "Żółciopędne (mniszek, karczoch, kurkuma) — dopiero MIĘDZY atakami i ostrożnie przy stwierdzonej kamicy: mocno pchnięta żółć potrafi ruszyć kamień z miejsca. To rzadko wypowiadana, ważna zasada zielarska.",
+      ]},
+      { id: "dieta", items: [
+        "Po ataku: nisko-tłuszczowo, ale REGULARNIE — paradoks pęcherzyka polega na tym, że głodówki i pomijanie posiłków zagęszczają żółć i sprzyjają kamieniom bardziej niż niejeden obiad.",
+        "Kawa działa ochronnie na pęcherzyk (dobre dane obserwacyjne); błonnik i warzywa na co dzień; ostre odstaw na czas rekonwalescencji.",
+      ]},
+      { id: "oklady", items: [
+        "Ciepły kompres na prawe podżebrze; między atakami — okłady z naparu skrzypu na okolicę wątroby wieczorem (stara szkoła naturoterapii).",
+      ]},
+      { id: "totalna", items: [
+        "Język wyprzedził medycynę: „żółć mnie zalewa”, „jadowity jak żółć”. Pęcherzyk to w totalnej biologii magazyn niestrawionego gniewu i urazy. Pytanie: na kogo złość leży w Tobie od miesięcy, twardniejąc jak kamień?",
+      ]},
+    ],
+  },
+
+  nerka: {
+    title: "Kolka nerkowa",
+    subtitle: "Typowo: nagły, falowy ból lędźwi lub boku promieniujący do pachwiny; chory nie może uleżeć — szuka pozycji, której nie ma.",
+    flags: [
+      "Kolka + gorączka z dreszczami — zablokowana i zakażona nerka to stan zagrożenia życia, natychmiast do szpitala",
+      "Brak moczu; kolka u osoby z jedną nerką; kolka w ciąży; masywna krew w moczu",
+      "Ból nie do opanowania domowo — kolka nerkowa to jeden z najsilniejszych bólów medycyny, nie ma wstydu w wezwaniu pomocy",
+    ],
+    now: [
+      "Gorąca kąpiel albo termofor na lędźwie i bok — ciepło ma w badaniach nad kolką realny efekt przeciwbólowy, porównywany z lekami rozkurczowymi.",
+      "Ruszaj się, jeśli dajesz radę: chodzenie, schody, nawet podskoki — w kolce (odwrotnie niż w wyrostku!) ruch pomaga kamieniowi wędrować w dół.",
+      "Pij normalnie, nie na siłę — zalewanie się wodą W TRAKCIE ataku zwiększa napór na zablokowany moczowód; hektolitry zostaw na czas po ataku.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "Rozcieranie i ugniatanie lędźwi pięściami (okolica BL23, dwa palce w bok od kręgosłupa na wysokości talii) — najlepiej cudzymi rękami.",
+        "KI3 — między kostką wewnętrzną a Achillesem; BL40 pod kolanem — kanał pęcherza biegnie wprost przez lędźwie.",
+      ]},
+      { id: "akupunktura", items: [
+        "BL23, BL28, punkty Ashi lędźwi, KI3, SP6; akupunktura w kolce ma badania jako realne wsparcie przeciwbólowe — szybciej łagodziła ból niż niektóre leki w izbach przyjęć.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "PO ataku, do wypłukiwania: nawłoć, skrzyp, liść brzozy, pokrzywa — urologiczna czwórka moczopędna.",
+        "Rozkurczowo w trakcie: rumianek, melisa; korzeń pietruszki jako łagodny klasyk „nerkowej” kuchni.",
+      ]},
+      { id: "dieta", items: [
+        "Profilaktyka nr 1 świata: woda, 2–2,5 litra dziennie, mocz ma być jasny jak słomka.",
+        "Codzienna lemoniada z prawdziwej cytryny — cytryniany wiążą wapń i realnie hamują wzrost najczęstszych kamieni (badania!).",
+        "Mniej SOLI — zaskoczenie: to sód wygania wapń do moczu; oraz umiar w szpinaku, rabarbarze, szczawiu i botwince (szczawiany).",
+        "NIE eliminuj wapnia z diety — paradoks kamicy: wapń zjedzony z posiłkiem wiąże szczawiany już w jelicie i chroni nerki. Odstawianie nabiału „na kamienie” to szkodliwy mit.",
+      ]},
+      { id: "praktyki", items: [
+        "Przy drobnych złogach urolodzy mówią pół żartem o „terapii skakanką” — pion, ruch i grawitacja to sprzymierzeńcy kamienia w drodze do wyjścia.",
+      ]},
+      { id: "totalna", items: [
+        "Nerki to w totalnej biologii narząd egzystencji — lęku o byt, o punkt oparcia, o „płynność” życia. Kamień bywa czytany jako coś, co miało przepłynąć, a skamieniało. Pytanie: która sprawa w Twoim życiu stoi zastygnięta, choć dawno powinna była odpłynąć?",
+      ]},
+    ],
+  },
+
+  dna: {
+    title: "Dna moczanowa — atak",
+    subtitle: "Typowo: staw (najczęściej paluch) budzi w nocy — gorący, siny, tak bolesny, że przeszkadza nawet kołdra.",
+    flags: [
+      "Gorący, obrzęknięty staw Z GORĄCZKĄ i dreszczami — septyczne zapalenie stawu wygląda identycznie jak dna, a rozstrzyga dopiero lekarz; nie zgaduj",
+      "Pierwszy atak w życiu — wymaga diagnostyki (kwas moczowy, ale badany PO ataku, w ataku bywa mylnie prawidłowy)",
+      "Brak poprawy po 2–3 dniach domowych metod",
+    ],
+    now: [
+      "Zimny okład 15 minut (przez ściereczkę) — dna to rzadki artretyzm, w którym lód ma badania po swojej stronie; ciepła NIE przykładaj.",
+      "Noga wyżej, staw w spokoju — zbuduj „namiot” z kołdry, żeby nawet ona nie dotykała palucha.",
+      "Pij dużo wody i sięgnij po wiśnie: świeże, mrożone lub sok z wiśni cierpkiej — w badaniach obniżały ryzyko ataków o ok. 35%, a z lekami działały synergicznie.",
+    ],
+    modules: [
+      { id: "dieta", items: [
+        "Wróg nr 1 wcale nie jest mięsny: FRUKTOZA — słodzone napoje i syrop glukozowo-fruktozowy podnoszą kwas moczowy gorzej niż niejeden kotlet; piwo szkodzi podwójnie (puryny + alkohol), także bezalkoholowe.",
+        "Ogranicz: podroby, buliony i sosy mięsne długo gotowane, sardele, śledzie, owoce morza, czerwone mięso.",
+        "Chronią: chudy nabiał, kawa (tak!), witamina C z pożywienia, woda 2+ litry; strączki — wbrew staremu mitowi — w umiarkowanych ilościach są w porządku wg nowszych badań.",
+      ]},
+      { id: "ziola", items: [
+        "Wiśnia cierpka — królowa tej karty; nasiona selera — stara tradycja „przeciwdnawa”; pokrzywa do wypłukiwania między atakami.",
+        "Kurkuma z pieprzem przeciwzapalnie; NIE stosuj w ataku ziół moczopędnych na siłę — gwałtowne zagęszczanie i rozcieńczanie moczanów bywa iskrą.",
+      ]},
+      { id: "oklady", items: [
+        "Zimny kompres lub liść kapusty z lodówki na noc; żadnych rozgrzewających maści — to dolewanie ognia.",
+      ]},
+      { id: "akupresura", items: [
+        "W ataku NIE uciskaj chorego stawu; pracuj dystalnie: SP9 i SP6 (odprowadzanie wilgoci-gorąca), LV3 po zdrowej stronie.",
+      ]},
+      { id: "akupunktura", items: [
+        "Wilgoć-gorąco: SP9, SP6, LI11, ST44; lokalnie technika otaczająca (igły wokół stawu, nie w staw) i klasyka dny w TCM: upust kilku kropli krwi z okolicy wykwitu — stara szkoła o zaskakująco szybkim efekcie przeciwbólowym.",
+      ], therapist: true },
+      { id: "suplementy", items: [
+        "Witamina C 500 mg (łagodnie obniża kwas moczowy), omega-3; między atakami rozważ badanie kwasu moczowego co pół roku.",
+      ]},
+      { id: "totalna", items: [
+        "„Choroba królów i król chorób” — dna od wieków chodzi w parze z nadmiarem, którego nie dało się spalić. Ciekawostka fizjologiczna zamiast metafory: atakuje nocą i wybiera palucha, bo to najzimniejszy punkt ciała — a moczany krystalizują właśnie w chłodzie, jak cukier w zimnej herbacie. Pytanie do siebie: czego gromadzisz więcej, niż jesteś w stanie przetworzyć?",
+      ]},
+    ],
+  },
+
+  niskie: {
+    title: "Niskie ciśnienie",
+    flags: [
+      "Omdlenie PODCZAS wysiłku, z kołataniem albo z urazem głowy — diagnostyka kardiologiczna, nie kawa",
+      "Nagły spadek ciśnienia ze smolistym stolcem lub silnym bólem brzucha — możliwe krwawienie wewnętrzne, pilnie",
+      "Zasłabnięcia po nowym leku — powiedz lekarzowi, często wystarczy korekta dawki",
+    ],
+    now: [
+      "Wypij duszkiem dużą szklankę zimnej wody — u hipotoników podnosi ciśnienie o kilkanaście mmHg w kwadrans (odruch presyjny, dobrze przebadany).",
+      "Czujesz, że „odpływasz”: skrzyżuj nogi na stojąco i napnij mocno łydki, uda i pośladki na 30 sekund — manewry oporowe wyciskają krew z nóg do głowy i realnie zapobiegają omdleniu.",
+      "Coś słonego do tego: bulion, kiszony ogórek, garść solonych migdałów.",
+    ],
+    modules: [
+      { id: "praktyki", items: [
+        "Wstawaj dwuetapowo: usiądź, policz do pięciu, wstań; rano zacznij dzień od szklanki wody JESZCZE w łóżku.",
+        "Naprzemienny prysznic (ciepło–chłodno, kończ chłodnym od stóp w górę) — Kneipp wymyślił to właśnie dla ludzi „bez ciśnienia”.",
+        "Pończochy uciskowe przy staniu; śpij z wezgłowiem uniesionym o 10 cm — paradoksalnie zmniejsza poranne spadki.",
+      ]},
+      { id: "ziola", items: [
+        "Rozmaryn — klasyczne zioło hipotoników: napar albo tradycyjne wino rozmarynowe łyżeczkami.",
+        "Lukrecja podnosi ciśnienie — to, co dla nadciśnieniowca jest przeciwwskazaniem, dla Ciebie bywa lekiem (kilka tygodni, nie stale).",
+        "Żeń-szeń rano kursami; kawa — legalna i skuteczna, najlepiej po posiłku.",
+      ]},
+      { id: "dieta", items: [
+        "Sól liberalnie (odwrotność sąsiedniej karty!) — chyba że lekarz mówi inaczej; woda 2–2,5 litra.",
+        "Mniejsze, częstsze posiłki: po dużym obiedzie krew masowo spływa do brzucha i hipotonik „gaśnie” — to zjawisko ma nazwę: hipotonia poposiłkowa.",
+      ]},
+      { id: "akupresura", items: [
+        "DU26 — dołek pod nosem: punkt cucący pierwszej pomocy, mocny ucisk paznokciem; ST36 i CV6 codziennie tonizująco.",
+      ]},
+      { id: "akupunktura", items: [
+        "Niedobór Qi i Yang: ST36, CV6, CV4, DU20 — wszystkie chętnie z moksą; KI3 przy zimnych stopach i „braku korzenia”.",
+      ], therapist: true },
+      { id: "totalna", items: [
+        "Niskie ciśnienie bywa czytane jako zdjęcie nogi z gazu życia: gdzie wycofałaś się z walki, która kiedyś Cię rozpalała?",
+      ]},
+    ],
+  },
+
+  czkawka: {
+    title: "Czkawka",
+    flags: [
+      "Czkawka trwająca ponad 48 godzin — to już objaw neurologiczny/lekowy, wymaga diagnostyki",
+      "Czkawka z bólem w klatce lub trudnością połykania",
+    ],
+    now: [
+      "Łyżeczka suchego cukru na tylną część języka i przełknij — metoda opisana w poważnym piśmie medycznym już w 1971 r.: ziarnista słodycz „resetuje” nerw błędny.",
+      "Weź głęboki wdech, zatrzymaj i przełknij ślinę trzy razy, zanim zrobisz wydech.",
+      "Pij wodę z PRZECIWLEGŁEJ krawędzi szklanki (pochylona sylwetka + dziwny wzorzec połykania = podwójny reset przepony).",
+    ],
+    modules: [
+      { id: "oddech", items: [
+        "Oddychanie do papierowej torebki przez minutę — wzrost CO2 uspokaja przeponę; manewr Valsalvy jak przy kołataniu.",
+      ]},
+      { id: "akupresura", items: [
+        "PC6 mocno przez 2 minuty; CV22 (dołek szyjny) bardzo delikatnie w dół; ucisk gałek ocznych przez zamknięte powieki — stary lekarski trik na nerw błędny.",
+      ]},
+      { id: "akupunktura", items: [
+        "PC6, CV22, BL17 (punkt przepony!), ST36; uporczywa: dodać LV3, CV12 — czkawka to w TCM „zbuntowane Qi żołądka”.",
+      ], therapist: true },
+      { id: "praktyki", items: [
+        "Czkawka wraca przy szybkim jedzeniu, gazowanych napojach i gorące-zimne na przemian. Ku pokrzepieniu: rekordzista świata czkał 68 lat — Twoje pięć minut to jednak nie tragedia.",
+      ]},
+    ],
+  },
+
+  kac: {
+    title: "Kac",
+    flags: [
+      "Wymioty nie do opanowania, splątanie, drgawki — to nie kac, to stan wymagający pomocy",
+      "„Kacowy” ból głowy inny niż zwykle, piorunujący — nie zgaduj, sprawdź",
+      "WAŻNE: nie bierz paracetamolu na kaca — wątroba zajęta alkoholem metabolizuje go do toksyny. Jeśli już coś, to ibuprofen na pełny żołądek.",
+    ],
+    now: [
+      "Woda z elektrolitami (albo domowa: woda + szczypta soli + miód + cytryna) — połowa kaca to zwykłe odwodnienie.",
+      "Śniadanie z jajkami: cysteina z jajek pomaga rozkładać aldehyd octowy — głównego truciciela kacowego poranka.",
+      "Imbir lub PC6 na mdłości; potem sen — jedyny lek, który naprawdę leczy kaca, nazywa się czas.",
+    ],
+    modules: [
+      { id: "dieta", items: [
+        "Banany i kiszonki (potas + sód), rosół, miód — fruktoza lekko przyspiesza spalanie alkoholu.",
+        "„Klin” nie leczy: tylko odracza metabolizm aldehydu i dopisuje odsetki do długu.",
+      ]},
+      { id: "ziola", items: [
+        "Imbir na żołądek, mięta na mdłości, ostropest przed i po (sylimaryna osłania wątrobę); opuncja figowa ma nawet badanie kliniczne o łagodzeniu kaca.",
+      ]},
+      { id: "suplementy", items: [
+        "Elektrolity, witaminy z grupy B (alkohol je wypłukuje), magnez.",
+      ]},
+      { id: "praktyki", items: [
+        "Profilaktyka lepsza niż leczenie: szklanka wody na każdy kieliszek, jedzenie przed i w trakcie, jaśniejsze trunki (mniej kongenerów = lżejszy poranek — ciemne alkohole kacują mocniej, to zbadane).",
+      ]},
+      { id: "akupresura", items: [
+        "PC6 na nudności, LI4 na ból głowy, KI1 rozcieranie — „ściągnięcie” ciężkiej głowy w dół.",
+      ]},
+    ],
+  },
+
+  nos: {
+    title: "Krwawienie z nosa",
+    flags: [
+      "Krwawienie ponad 20 minut mimo prawidłowego ucisku; obfite u osoby na lekach przeciwzakrzepowych",
+      "Po urazie głowy, zwłaszcza z wodnisto-krwistym wyciekiem — pilnie",
+      "Częste nawroty bez uchwytnej przyczyny — zbadaj krzepnięcie i ciśnienie",
+    ],
+    now: [
+      "Głowa DO PRZODU, nie do tyłu — odchylanie głowy to najpopularniejszy szkodliwy mit domowy: krew spływa wtedy do gardła i żołądka, skąd wraca nudnościami.",
+      "Ściśnij palcami miękkie skrzydełka nosa (nie kostną nasadę!) i trzymaj 10 minut BEZ podglądania — każde zerknięcie zrywa świeży skrzep i licznik startuje od zera.",
+      "Zimny okład na kark lub nasadę nosa; oddychaj ustami, siedź spokojnie.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Krwawnik — sama nazwa jest instrukcją (po łacinie Achillea: Achilles tamował nim rany żołnierzy); wacik nasączony mocnym naparem delikatnie do przedsionka nosa po ustaniu krwawienia.",
+        "Napar z pokrzywy do picia przy skłonności do krwawień.",
+      ]},
+      { id: "praktyki", items: [
+        "Po epizodzie: 24 godziny bez dmuchania nosa, gorących kąpieli i dźwigania.",
+        "Profilaktyka zimowa: nawilżacz powietrza i cienka warstwa maści (majerankowa, wazelina) na przegrodę — krwawienia z suchości to 90% domowych przypadków.",
+      ]},
+      { id: "akupresura", items: [
+        "LI4 mocno po stronie krwawiącej dziurki; DU26 pod nosem uciskany paznokciem — stara szkoła pierwszej pomocy.",
+      ]},
+      { id: "akupunktura", items: [
+        "LI4, LI20, DU23; gorąco w płucach/żołądku jako tło nawrotów: LU10, ST44.",
+      ], therapist: true },
+    ],
+  },
+
+  afty: {
+    title: "Afty i zajady",
+    flags: [
+      "„Afta”, która nie goi się ponad 2 tygodnie — pokaż lekarzowi lub stomatologowi, bez wyjątku",
+      "Rozległe zmiany z gorączką u dziecka; nawracające liczne afty — sprawdź żelazo, B12, kwas foliowy (a przy uporczywych też celiakię)",
+    ],
+    now: [
+      "Płukanka z szałwii lub rumianku 3–4× dziennie; punktowo miód lub propolis na aftę.",
+      "Kostka lodu possana przy bólu; unikaj kwaśnego, ostrego i chrupiącego do zagojenia.",
+      "Sprawdź swoją pastę: laurylosiarczan sodu (SLS) w składzie nasila afty u skłonnych — zmiana pasty na bez-SLS to jedna z najskuteczniejszych i najmniej znanych interwencji.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Szałwia i kora dębu — płukanki ściągające; nagietek na gojenie; propolis w kroplach punktowo (u nieuczulonych na produkty pszczele).",
+      ]},
+      { id: "plukanki", items: [
+        "Sól lub soda (pół łyżeczki na szklankę) na zmianę z ziołami; woda utleniona pół na pół z wodą — krótko, tylko na początku.",
+      ]},
+      { id: "dieta", items: [
+        "ZAJADY to inna bajka niż afty: pęknięcia kącików ust wołają o witaminę B2, żelazo lub cynk — i proszą, żeby ich nie oblizywać (wilgoć karmi drożdżaki, które tam mieszkają).",
+        "Przy nawrotach aft prowadź 2 tygodnie dziennik: u części ludzi wyzwalaczem są orzechy, czekolada, pomidory lub ananas.",
+      ]},
+      { id: "suplementy", items: [
+        "B12 (nawet bez niedoboru w badaniach zmniejszała nawroty aft — ciekawy paradoks), cynk, żelazo po oznaczeniu ferrytyny.",
+      ]},
+      { id: "akupunktura", items: [
+        "Gorąco serca/żołądka wychodzi na śluzówki: HT8, ST44, LI4, CV24 lokalnie ostrożnie; nawrotowe z niedoboru Yin: KI6, SP6.",
+      ], therapist: true },
+    ],
+  },
+
+  /* KOLANO — karty skrócone wg rodzaju bólu */
+  "kolano-przod": {
+    title: "Kolano: ból z przodu, wokół rzepki",
+    subtitle: "Typowo: gorzej przy schodzeniu ze schodów, kucaniu, po długim siedzeniu (tzw. kolano kinomana).",
+    flags: [
+      "Kolano ugina się i „ucieka”, nie da się obciążyć nogi po urazie",
+      "Silny obrzęk narastający w ciągu godzin po skręceniu",
+    ],
+    now: [
+      "Odpuść na kilka dni schody w dół, przysiady i klęk — nie ruch w ogóle, tylko te trzy rzeczy.",
+      "Chłodny okład 15 minut, jeśli kolano jest podrażnione po wysiłku.",
+      "Na noc liść kapusty zbity wałkiem, owinięty bandażem — stara metoda z zaskakująco dobrą prasą u fizjoterapeutów.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "Xiyan („oczka kolana”) — dwa dołki po bokach więzadła pod rzepką, przy lekko zgiętym kolanie; masuj oba naraz kciukiem i palcem.",
+        "ST34 — dwa cuny nad górnym bocznym brzegiem rzepki: punkt ostrego bólu kolana.",
+        "SP10, GB34 wspierająco.",
+      ]},
+      { id: "akupunktura", items: [
+        "Xiyan bilateralnie, ST34, ST36, GB34 (punkt wpływowy ścięgien), SP9; moksa na Xiyan przy bólu „od zimna”, lepszym po rozgrzaniu.",
+      ], therapist: true },
+      { id: "masci", items: [
+        "Maść z żywokostu — na stawy i okostną, wcierać 2× dziennie (nie na uszkodzoną skórę).",
+        "Arnika przy podrażnieniu po wysiłku.",
+      ]},
+      { id: "praktyki", items: [
+        "Docelowo ratunkiem jest silne udo: powolne wstawanie z krzesła bez pomocy rąk, 3 serie po 10, codziennie. Rzepka boli, gdy mięsień śpi.",
+      ]},
+      { id: "dieta", items: [
+        "Przeciwzapalnie: tłuste ryby lub omega-3, kurkuma z pieprzem, mniej cukru i smażonego.",
+      ]},
+    ],
+  },
+  "kolano-wewn": {
+    title: "Kolano: ból po wewnętrznej stronie",
+    subtitle: "Typowo: bolesny punkt poniżej szpary stawu (gęsia stopka) albo ból w linii stawu (łąkotka).",
+    flags: [
+      "Kolano blokuje się w jednej pozycji i nie chce wyprostować — podejrzenie uszkodzenia łąkotki, potrzebna diagnostyka",
+    ],
+    now: [
+      "Znajdź palcem najboleśniejszy punkt: jeśli jest 2–3 cm poniżej szpary stawu, to zwykle przyczep ścięgien (gęsia stopka) — reaguje na chłodzenie i odciążenie.",
+      "Chłodny okład 15 minut 2× dziennie przez 3 dni.",
+      "Poduszka między kolana do spania na boku — zdejmuje nocne napięcie z tego miejsca.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "SP9 (Yinlingquan) — pod przyśrodkowym kłykciem piszczeli, często bolesny sam z siebie; masuj do rozpuszczenia bólu.",
+        "SP10, LV8 — wewnętrzna strona kolana to domena śledziony i wątroby.",
+      ]},
+      { id: "akupunktura", items: [
+        "SP9, SP10, LV8, Xiyan przyśrodkowe, KI10; przy wilgoci-zimnie moksa pośrednia.",
+      ], therapist: true },
+      { id: "masci", items: [
+        "Żywokost na noc pod lekkim opatrunkiem; arnika doraźnie.",
+      ]},
+      { id: "oklady", items: [
+        "Kapusta na noc; przy przewlekłym bólu „od zimna” — ciepły okład z soli na patelni w lnianym woreczku.",
+      ]},
+    ],
+  },
+  "kolano-tyl": {
+    title: "Kolano: ból z tyłu, pod kolanem",
+    flags: [
+      "Ból + obrzęk + ucieplenie łydki, zwłaszcza po podróży lub unieruchomieniu — możliwa zakrzepica, pilnie do lekarza, nie masuj!",
+      "Nagły ból podkolanowy z „pęknięciem” i siniakiem spływającym do łydki",
+    ],
+    now: [
+      "Najpierw wyklucz czerwone flagi powyżej — tył kolana to jedyne miejsce w tej apce, gdzie masaż może zaszkodzić.",
+      "Jeśli to zwykłe przeciążenie: unikaj pełnego prostowania z naciskiem, chłodny okład 15 minut.",
+      "Delikatne rozciąganie łydki i dwugłowego uda 2× dziennie po 30 sekund.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "BL40 (Weizhong) — środek dołu podkolanowego: uciskaj TYLKO delikatnie i tylko po wykluczeniu zakrzepicy.",
+        "BL57 — brzusiec łydki; częściej to on jest winowajcą bólu rzutowanego pod kolano.",
+      ]},
+      { id: "akupunktura", items: [
+        "BL40 (klasyczny punkt „polecany dla pleców i kolan”), BL57, KI10; ostrożnie z głębokością w dole podkolanowym.",
+      ], therapist: true },
+      { id: "praktyki", items: [
+        "Rolowanie łydki i tylnej taśmy uda wałkiem — tył kolana to często ofiara, nie sprawca.",
+      ]},
+    ],
+  },
+  "kolano-obrzek": {
+    title: "Kolano spuchnięte, ciepłe",
+    flags: [
+      "Obrzęk + gorączka + zaczerwienienie — możliwe zakażenie stawu, to pilny przypadek, nie okładaj, jedź do lekarza",
+      "Obrzęk po urazie z niemożnością obciążenia nogi",
+    ],
+    now: [
+      "Noga wyżej (powyżej serca), chłodny okład 15 minut co 2–3 godziny.",
+      "Nie rozgrzewaj i nie smaruj rozgrzewającymi maściami — ciepło dolewa oliwy do stanu zapalnego.",
+      "Liść kapusty na noc pod bandażem — działa też przeciwobrzękowo.",
+    ],
+    modules: [
+      { id: "ziola", items: [
+        "Kurkuma z czarnym pieprzem doustnie, wiązówka błotna (naturalna „aspiryna ziołowa” — nie przy uczuleniu na salicylany).",
+      ]},
+      { id: "akupunktura", items: [
+        "Wokół obrzęku, nie w niego: ST36, SP9 (odprowadza wilgoć), GB34; technika rozpraszająca.",
+      ], therapist: true },
+      { id: "dieta", items: [
+        "Na czas obrzęku: mniej soli, cukru i alkoholu; więcej wody, ananas (bromelaina) i tłuste ryby.",
+      ]},
+    ],
+  },
+
+  /* BARK */
+  "bark-unoszenie": {
+    title: "Bark: boli przy unoszeniu ręki",
+    subtitle: "Typowo: bolesny łuk w połowie unoszenia, trudno sięgnąć na wysoką półkę — zwykle stożek rotatorów.",
+    flags: [
+      "Ręka po urazie w ogóle nie unosi się czynnie (ktoś musi ją podnieść) — możliwe zerwanie, potrzebna diagnostyka",
+    ],
+    now: [
+      "Ćwiczenie wahadła Codmana: pochyl się, oprzyj zdrową ręką o stół, chora zwisa luźno i koluje jak wahadło, 2 minuty, kilka razy dziennie.",
+      "Chłodny okład po dniu, w którym bark pracował; unikaj tylko ruchów przez ból, nie ruchu w ogóle.",
+      "Śpij na plecach lub zdrowym boku z poduszką pod chorym ramieniem.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "LI15 — dołek z przodu barku przy uniesieniu ręki; TE14 — dołek z tyłu: para „oczek barku”.",
+        "ST38 (Tiaokou) — na podudziu! Klasyczny odległy punkt barku: uciskaj mocno i JEDNOCZEŚNIE powoli ruszaj chorym barkiem.",
+      ]},
+      { id: "akupunktura", items: [
+        "LI15, TE14, SI9–SI11 wg bolesności, ST38 z ruchem czynnym barku (technika ruchowa daje tu najlepsze efekty), LI4.",
+      ], therapist: true },
+      { id: "masci", items: [
+        "Arnika lub żywokost 2× dziennie; wieczorem można pod ciepły kompres, jeśli ból jest „stary” i tępy.",
+      ]},
+      { id: "praktyki", items: [
+        "Gdy ból zelżeje: izometria — pchaj dłonią w ścianę (w bok, w przód) po 10 sekund, bez ruchu stawu. To karma dla ścięgien.",
+      ]},
+    ],
+  },
+  "bark-nocny": {
+    title: "Bark: ból nocny",
+    subtitle: "Budzi ze snu, nie da się leżeć na chorym boku — częsty początek zamrożonego barku lub zapalenia kaletki.",
+    flags: [
+      "Ból nocny z gorączką i poczuciem rozbicia",
+      "Ból nocny barku, który nie zmienia się przy żadnym ruchu ręki — wymaga diagnostyki (może nie pochodzić z barku)",
+    ],
+    now: [
+      "Pozycja: na plecach, chore ramię na poduszce lekko odwiedzione od tułowia — kaletka dostaje wtedy miejsce.",
+      "Chłodny okład 15 minut przed snem (nocny ból to zwykle stan zapalny — zimno, nie ciepło).",
+      "Uciskaj TE14 i punkt najboleśniejszy na tylnej ścianie barku po 1 minucie przed snem.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "TE14, SI10, SI11 (środek łopatki — prawie zawsze tkliwy) — masuj piłeczką tenisową oparta o ścianę.",
+      ]},
+      { id: "akupunktura", items: [
+        "Punkty Ashi + SI10/SI11, TE14, LI15; przy komponencie zapalnym bez moksy; ucho: bark, Shenmen.",
+      ], therapist: true },
+      { id: "ziola", items: [
+        "Wiązówka lub kora wierzby doustnie wieczorem (naturalne salicylany — nie przy uczuleniu i lekach przeciwzakrzepowych).",
+      ]},
+    ],
+  },
+  "bark-zamrozony": {
+    title: "Zamrożony bark",
+    subtitle: "Sztywność narasta tygodniami, ruch coraz mniejszy w każdą stronę. Cierpliwość: to stan, który przechodzi fazy.",
+    flags: [
+      "Sztywność barku u osoby z cukrzycą lub chorobą tarczycy — warto o tym powiedzieć lekarzowi, to częste połączenie",
+    ],
+    now: [
+      "Ciepło przed ruchem: gorący prysznic na bark, potem 5 minut łagodnego kołysania wahadłowego.",
+      "„Chodzenie palcami” po ścianie w górę do granicy łagodnego oporu — nie przez ostry ból.",
+      "Zapisz dziś zakres (dokąd sięga ręka na ścianie) — postęp mierzy się tygodniami i łatwo go przeoczyć.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "SI9–SI12 wokół łopatki, LI15, TE14; codziennie, po rozgrzaniu.",
+        "ST38 z jednoczesnym ruchem barku — tu ta technika błyszczy najbardziej.",
+      ]},
+      { id: "akupunktura", items: [
+        "To koronna dziedzina moksy: moksa pośrednia na LI15, TE14, SI10 („zamrożony” = zimno-wilgoć w kanałach), plus ST38 z ruchem, GB21.",
+        "Bańki przesuwane po obręczy barkowej na oleju — rozprasza zastój.",
+      ], therapist: true },
+      { id: "oklady", items: [
+        "Ciepły woreczek z solą lub pestkami wiśni 2× dziennie po 15 minut — to jedyny bark w tym zestawie, który kocha ciepło.",
+      ]},
+      { id: "totalna", items: [
+        "Bark w totalnej biologii nosi ciężary i obowiązki: zamrożenie bywa czytane jako „nie chcę już dźwigać / nie wolno mi opuścić rąk”.",
+        "Pytanie do siebie: czyj ciężar niesiesz na tym ramieniu?",
+      ]},
+    ],
+  },
+  "bark-kark": {
+    title: "Ból schodzi z karku do barku",
+    subtitle: "Sztywny kark, ból rozlewa się na bark, czasem mrowi w ręce — źródłem jest zwykle szyja, nie bark.",
+    flags: [
+      "Drętwienie ręki z osłabieniem chwytu (wypadają przedmioty) — potrzebna diagnostyka kręgosłupa szyjnego",
+      "Sztywność karku z gorączką i światłowstrętem — pilnie do lekarza",
+    ],
+    now: [
+      "Ciepły okład na kark 15 minut (kark, w odróżnieniu od zapalnego barku, zwykle kocha ciepło).",
+      "Uciskaj GB21 — najwyższy punkt mięśnia między szyją a barkiem; poproś kogoś, to punkt stworzony do cudzych kciuków. Nie w ciąży.",
+      "Co godzinę pracy: 5 powolnych półkręgów głową i ściągnięcie łopatek w dół.",
+    ],
+    modules: [
+      { id: "akupresura", items: [
+        "GB21, GB20 (podpotylicznie), SI3 — krawędź dłoni poniżej małego palca: odległy punkt karku (para z BL62).",
+        "Punkt Luozhen na grzbiecie dłoni (między II a III kością śródręcza) — klasyk na „zaspany kark”: uciskaj i ruszaj szyją.",
+      ]},
+      { id: "akupunktura", items: [
+        "GB20, GB21, SI3+BL62 (Du Mai), punkty Huatuojiaji C4–C7, SI11; gua sha na kark i obręcz — tu daje spektakularne rezultaty.",
+      ], therapist: true },
+      { id: "automasaz", items: [
+        "Piłeczka między łopatką a ścianą; rozcieranie mięśni podpotylicznych opuszkami w leżeniu.",
+      ]},
+      { id: "praktyki", items: [
+        "Monitor na wysokości oczu, telefon do oczu zamiast oczu do telefonu — „tech neck” to połowa przypadków tej karty.",
+      ]},
+    ],
+  },
+};
+
+const MODULE_LABELS = {
+  akupresura: "Akupresura",
+  akupunktura: "Akupunktura · tryb terapeuty",
+  refleksologia: "Refleksologia stóp",
+  ziola: "Zioła",
+  oklady: "Okłady i kompresy",
+  dieta: "Dieta: wykluczyć / włączyć",
+  masci: "Maści i smarowidła",
+  suplementy: "Suplementy",
+  olejki: "Olejki eteryczne",
+  plukanki: "Płukanki i inhalacje",
+  oddech: "Techniki oddechowe",
+  automasaz: "Automasaż",
+  praktyki: "Praktyki i nawyki",
+  totalna: "Totalna biologia",
+};
+
+/* ============ ATLAS PUNKTÓW (ryciny SVG) ============ */
+/*
+   PODMIANA NA WŁASNE OBRAZKI:
+   Każdy szablon może zamiast rysunku (paths) dostać własny obrazek:
+     head_side: {
+       name: "głowa i kark", vb: "0 0 100 110",
+       img: "data:image/png;base64,....",   // Twój obrazek (PNG/JPG jako base64)
+       noDots: true,                         // jeśli punkty są już zaznaczone na obrazku
+     },
+   Gdy `img` jest ustawione, rysunek kreskowy jest ignorowany.
+   Gdy obrazek NIE ma zaznaczonych punktów, pomiń `noDots`,
+   a aplikacja naniesie kropki wg współrzędnych z POINTS
+   (współrzędne podajesz w skali viewBox, czyli 0–100 na szerokość).
+*/
+
+const FIG_TEMPLATES = {
+  hand_back: {
+    name: "grzbiet dłoni", vb: "0 0 100 125",
+    paths: [
+      "M34,118 C33,100 30,90 27,82 C22,74 12,62 9,55 C7,50 11,46 15,49 C21,54 27,62 31,67 L32,62 C31,45 30,30 31,22 C31,16 39,16 39,22 L40,60 L42,60 C42,40 42,20 43,12 C43,6 51,6 51,12 L52,60 L54,60 C54,42 54,26 55,18 C55,12 63,12 63,18 L63,62 L65,62 C65,48 66,38 67,32 C68,26 75,27 75,33 C75,45 74,60 72,75 C70,95 68,105 66,118",
+    ],
+  },
+  forearm_inner: {
+    name: "wnętrze nadgarstka i dłoni", vb: "0 0 100 125",
+    paths: [
+      "M33,55 C31,42 30,32 33,25 C35,18 40,14 45,13 L45,5 C45,1 50,1 50,5 L50,12 L54,12 L54,4 C54,0 59,0 59,4 L59,13 C64,14 69,18 71,25 C73,32 72,42 70,55",
+      "M33,55 L70,55",
+      "M35,55 C36,80 38,100 40,120",
+      "M68,55 C66,80 64,100 62,120",
+      "M38,28 C34,34 34,44 38,50",
+    ],
+  },
+  head_side: {
+    name: "głowa i kark (profil)", vb: "0 0 100 110",
+    paths: [
+      "M30,18 C50,4 78,10 84,36 C88,55 80,70 70,76",
+      "M30,18 C20,26 16,34 18,40 C16,44 20,46 18,50 C16,54 22,56 22,60 C24,68 30,72 38,74",
+      "M38,74 C40,84 41,92 40,100",
+      "M70,76 C72,84 74,90 78,94",
+      "M40,100 C55,96 72,92 96,90",
+    ],
+    circles: [[48, 46, 5]],
+  },
+  foot_top: {
+    name: "grzbiet stopy", vb: "0 0 100 110",
+    paths: [
+      "M35,105 C30,85 28,60 33,40 C34,30 36,22 40,16 C40,8 50,8 50,15 L52,20 C53,12 60,12 60,18 C62,14 67,14 67,19 C69,16 73,16 73,21 C76,18 79,19 79,24 C82,40 80,70 74,105",
+    ],
+  },
+  foot_sole: {
+    name: "podeszwa stopy", vb: "0 0 100 110",
+    paths: [
+      "M38,20 C40,10 60,10 62,20 C66,30 68,45 64,60 C62,72 64,84 58,98 C54,106 44,106 41,98 C36,86 38,72 36,60 C32,45 34,30 38,20 Z",
+    ],
+  },
+  leg_inner: {
+    name: "noga od wewnątrz", vb: "0 0 100 125",
+    paths: [
+      "M40,5 L38,25 C36,32 36,40 40,46 C42,70 42,85 44,95",
+      "M62,5 L64,30 C66,45 62,60 60,75 C58,88 58,95 57,102",
+      "M44,104 C36,108 22,110 14,108 L14,114 C28,118 44,116 52,110",
+    ],
+    circles: [[47, 99, 4]],
+  },
+  leg_front: {
+    name: "kolano i podudzie z przodu", vb: "0 0 100 125",
+    paths: [
+      "M38,4 L36,22", "M64,4 L66,22",
+      "M38,34 C40,60 42,90 44,118",
+      "M64,34 C62,60 58,90 56,118",
+    ],
+    circles: [[50, 26, 7], [67, 34, 3]],
+  },
+  arm: {
+    name: "bark i ramię", vb: "0 0 100 125",
+    paths: [
+      "M8,28 C14,14 30,8 44,12 C52,14 56,20 58,28 C62,44 64,56 62,66 C60,84 54,100 48,114",
+      "M20,34 C24,50 30,60 36,68 C42,82 44,96 40,112",
+    ],
+  },
+  torso_front: {
+    name: "klatka i brzuch", vb: "0 0 100 125",
+    paths: [
+      "M12,26 C30,14 70,14 88,26",
+      "M12,26 C10,50 16,75 20,100 L20,118",
+      "M88,26 C90,50 84,75 80,100 L80,118",
+      "M40,14 L40,6", "M60,14 L60,6",
+      "M50,22 L50,92",
+    ],
+    circles: [[50, 80, 2.5]],
+  },
+  back_scapula: {
+    name: "łopatka (widok z tyłu)", vb: "0 0 100 110",
+    paths: [
+      "M45,4 L44,14", "M55,4 L56,14",
+      "M44,14 C28,16 12,22 6,30 C8,55 10,80 12,100",
+      "M56,14 C72,16 88,22 94,30 C92,55 90,80 88,100",
+      "M50,14 L50,100",
+      "M60,26 C74,26 80,34 78,44 C76,56 68,64 62,62 C58,60 58,40 60,26 Z",
+    ],
+  },
+  leg_back: {
+    name: "tył nogi", vb: "0 0 100 125",
+    paths: [
+      "M40,4 L38,30", "M62,4 L64,30",
+      "M38,36 C46,40 56,40 64,36",
+      "M38,36 C34,55 36,72 42,88 C46,100 46,110 45,120",
+      "M64,36 C68,55 66,72 60,88 C56,100 56,110 57,120",
+    ],
+  },
+};
+
+/* punkt → rycina, kropki [x,y], pozycja etykiety l:[x,y] */
+const POINTS = {
+  LI4:  { t: "hand_back", d: [[28, 66]], l: [6, 78] },
+  Luozhen: { t: "hand_back", d: [[46, 72]], l: [38, 88] },
+  SI3:  { t: "hand_back", d: [[70, 78]], l: [76, 92] },
+  LU10: { t: "forearm_inner", d: [[39, 38]], l: [8, 36] },
+  HT7:  { t: "forearm_inner", d: [[66, 55]], l: [76, 53] },
+  HT6:  { t: "forearm_inner", d: [[65, 62]], l: [75, 68] },
+  PC6:  { t: "forearm_inner", d: [[52, 70]], l: [58, 78] },
+  LU7:  { t: "forearm_inner", d: [[38, 62]], l: [10, 66] },
+  Yintang: { t: "head_side", d: [[20, 40]], l: [4, 32] },
+  Taiyang: { t: "head_side", d: [[31, 41]], l: [26, 30] },
+  "An Mian": { t: "head_side", d: [[54, 54]], l: [46, 68] },
+  GB20: { t: "head_side", d: [[63, 50]], l: [70, 44] },
+  GB21: { t: "head_side", d: [[80, 91]], l: [72, 104] },
+  LV3:  { t: "foot_top", d: [[45, 50]], l: [52, 48] },
+  KI1:  { t: "foot_sole", d: [[50, 34]], l: [58, 30] },
+  SP10: { t: "leg_inner", d: [[44, 10]], l: [50, 10] },
+  LV8:  { t: "leg_inner", d: [[58, 32]], l: [66, 30] },
+  SP9:  { t: "leg_inner", d: [[44, 36]], l: [16, 38] },
+  SP6:  { t: "leg_inner", d: [[46, 80]], l: [18, 82] },
+  KI3:  { t: "leg_inner", d: [[56, 96]], l: [64, 94] },
+  KI6:  { t: "leg_inner", d: [[44, 110]], l: [56, 118] },
+  ST34: { t: "leg_front", d: [[61, 14]], l: [68, 12] },
+  Xiyan: { t: "leg_front", d: [[42, 36], [58, 36]], l: [8, 34] },
+  GB34: { t: "leg_front", d: [[68, 42]], l: [74, 52] },
+  ST36: { t: "leg_front", d: [[58, 50]], l: [66, 62] },
+  ST38: { t: "leg_front", d: [[52, 78]], l: [60, 84] },
+  LI15: { t: "arm", d: [[30, 22]], l: [8, 12] },
+  TE14: { t: "arm", d: [[48, 20]], l: [56, 14] },
+  LI11: { t: "arm", d: [[54, 62]], l: [64, 66] },
+  CV17: { t: "torso_front", d: [[50, 42]], l: [58, 40] },
+  CV12: { t: "torso_front", d: [[50, 66]], l: [58, 64] },
+  SI9:  { t: "back_scapula", d: [[62, 54]], l: [50, 68] },
+  SI10: { t: "back_scapula", d: [[66, 32]], l: [50, 26] },
+  SI11: { t: "back_scapula", d: [[70, 44]], l: [80, 48] },
+  BL40: { t: "leg_back", d: [[51, 38]], l: [64, 30] },
+  BL57: { t: "leg_back", d: [[51, 76]], l: [62, 82] },
+};
+
+const POINT_RX = new RegExp(
+  "(An Mian|Yintang|Taiyang|Luozhen|Xiyan|LI15|LI11|LI4(?!\\d)|LU10|LU7(?!\\d)|PC6(?!\\d)|HT7(?!\\d)|HT6(?!\\d)|GB20|GB21|GB34|LV3(?!\\d)|LV8(?!\\d)|KI1(?!\\d)|KI3(?!\\d)|KI6(?!\\d)|SP10|SP9(?!\\d)|SP6(?!\\d)|ST34|ST36|ST38|SI3(?!\\d)|SI9(?!\\d)|SI10|SI11|TE14|BL40|BL57|CV12|CV17)",
+  "g"
+);
+
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+var therapist=false, view={type:"home"};
+
+function figsHTML(items){
+  var text=items.join("  "), found=[], seen={}, m;
+  POINT_RX.lastIndex=0;
+  while((m=POINT_RX.exec(text))){ var k=m[0]; if(!seen[k] && POINTS[k]){seen[k]=1;found.push(k);} }
+  if(!found.length) return "";
+  var byT={};
+  found.forEach(function(k){var t=POINTS[k].t;(byT[t]=byT[t]||[]).push(k);});
+  var out='<div class="figs">';
+  Object.keys(byT).forEach(function(t){
+    var keys=byT[t], tpl=FIG_TEMPLATES[t];
+    var svg='<svg viewBox="'+tpl.vb+'" width="118" height="146" role="img" aria-label="'+esc(tpl.name)+'">';
+    if(tpl.img){
+      var vbH=Number(tpl.vb.split(" ")[3])||125;
+      svg+='<image href="'+tpl.img+'" x="0" y="0" width="100" height="'+vbH+'" preserveAspectRatio="xMidYMid meet"/>';
+    } else {
+      (tpl.paths||[]).forEach(function(p){svg+='<path d="'+p+'" class="fig-line"/>';});
+      (tpl.circles||[]).forEach(function(c){svg+='<circle cx="'+c[0]+'" cy="'+c[1]+'" r="'+c[2]+'" class="fig-line"/>';});
+    }
+    if(!tpl.noDots){
+      keys.forEach(function(k){POINTS[k].d.forEach(function(xy){
+        svg+='<circle cx="'+xy[0]+'" cy="'+xy[1]+'" r="4.5" class="fig-ring"/><circle cx="'+xy[0]+'" cy="'+xy[1]+'" r="2.1" class="fig-dot"/>';});});
+      keys.forEach(function(k){var p=POINTS[k],l=p.l||[p.d[0][0]+6,p.d[0][1]-5];
+        svg+='<text x="'+l[0]+'" y="'+l[1]+'" class="fig-lab">'+esc(k)+'</text>';});
+    }
+    svg+='</svg>';
+    out+='<figure class="fig">'+svg+'<figcaption>'+esc(tpl.name)+'</figcaption></figure>';
+  });
+  return out+'</div>';
+}
+
+function chipsHTML(list){
+  return '<div class="chips">'+list.map(function(p){
+    return '<button class="chip" data-pick="'+p.id+'">'+esc(p.label)+'</button>';}).join('')+'</div>';
+}
+
+function homeHTML(){
+  return '<div class="page">'
+    +'<header class="masthead"><div class="mast-rule"></div>'
+    +'<p class="mast-eyebrow">domowe kompendium samopomocy</p></header>'
+    +'<section class="qsec"><h1 class="question">Co Cię boli?</h1>'+chipsHTML(PAIN)+'</section>'
+    +'<section class="qsec"><h1 class="question">Jakie masz inne objawy?</h1>'+chipsHTML(SYMPTOMS)+'</section>'
+    +'<footer class="foot">To kompendium metod naturalnych dla domowników i przyjaciół — nie porada medyczna i nie zamiennik lekarza. Przy objawach nagłych lub nasilających się: 112 / 999.</footer>'
+    +'</div>';
+}
+
+function labelOf(id){
+  var all=PAIN.concat(SYMPTOMS);
+  for(var i=0;i<all.length;i++) if(all[i].id===id) return all[i].label;
+  return id;
+}
+
+function cardHTML(card){
+  var mods=card.modules.filter(function(m){return !m.therapist||therapist;});
+  var html='<div class="page"><button class="back" data-back>&larr; wróć do pytań</button>'
+    +'<h1 class="card-title">'+esc(card.title)+'</h1>'
+    +(card.subtitle?'<p class="card-sub">'+esc(card.subtitle)+'</p>':'')
+    +'<section class="flags"><h2 class="flags__title">🚩 Najpierw sprawdź — kiedy to nie jest sprawa na domowe metody</h2><ul>'
+    +card.flags.map(function(f){return '<li>'+esc(f)+'</li>';}).join('')+'</ul></section>'
+    +'<section class="now"><h2 class="now__title">Zrób teraz</h2><ol>'
+    +card.now.map(function(n){return '<li>'+esc(n)+'</li>';}).join('')+'</ol></section>'
+    +'<section><h2 class="modules-title">Chcesz zrobić więcej? Wybieraj i mieszaj:</h2>';
+  mods.forEach(function(m){
+    var fig=(m.id==="akupresura"||m.id==="akupunktura")?figsHTML(m.items):"";
+    html+='<div class="acc"><button class="acc__head" data-acc aria-expanded="false"><span>'
+      +esc(MODULE_LABELS[m.id]||m.id)+'</span><span class="acc__sign">+</span></button>'
+      +'<div class="acc__wrap">'+fig+'<ul class="acc__body">'
+      +m.items.map(function(it){return '<li>'+esc(it)+'</li>';}).join('')+'</ul></div></div>';
+  });
+  var hasTher=card.modules.some(function(m){return m.therapist;});
+  if(!therapist && hasTher) html+='<p class="hint">Moduł akupunktury widoczny po włączeniu trybu terapeuty (u góry strony).</p>';
+  return html+'</section></div>';
+}
+
+function chooserHTML(ch){
+  return '<div class="page"><button class="back" data-back>&larr; wróć do pytań</button>'
+    +'<h1 class="card-title">'+esc(ch.title)+'</h1>'
+    +'<p class="chooser-q">'+esc(ch.question)+'</p>'
+    +'<div class="chooser-list">'+ch.options.map(function(o){
+      return '<button class="chooser-opt" data-choose="'+o.cardId+'">'+esc(o.label)+'</button>';}).join('')
+    +'</div></div>';
+}
+
+function placeholderHTML(label){
+  return '<div class="page"><button class="back" data-back>&larr; wróć do pytań</button>'
+    +'<h1 class="card-title">'+esc(label)+'</h1>'
+    +'<p class="ph">Ta karta czeka na treść.</p>'
+    +'<p class="ph ph--small">Jeśli objawy są nasilone albo niepokojące — skontaktuj się z lekarzem.</p></div>';
+}
+
+var content=document.getElementById("content");
+
+function render(){
+  if(view.type==="home") content.innerHTML=homeHTML();
+  else if(view.type==="chooser") content.innerHTML=chooserHTML(CHOOSERS[view.id]);
+  else {
+    var card=CARDS[view.id];
+    content.innerHTML=card?cardHTML(card):placeholderHTML(labelOf(view.id));
+  }
+  window.scrollTo(0,0);
+}
+
+content.addEventListener("click",function(e){
+  var el;
+  if((el=e.target.closest("[data-pick]"))){
+    var id=el.getAttribute("data-pick");
+    view=CHOOSERS[id]?{type:"chooser",id:id}:{type:"card",id:id};
+    render(); return;
+  }
+  if(e.target.closest("[data-back]")){view={type:"home"};render();return;}
+  if((el=e.target.closest("[data-choose]"))){view={type:"card",id:el.getAttribute("data-choose")};render();return;}
+  if((el=e.target.closest("[data-acc]"))){
+    var wrap=el.parentElement;
+    wrap.classList.toggle("acc--open");
+    var open=wrap.classList.contains("acc--open");
+    el.setAttribute("aria-expanded",open?"true":"false");
+    el.querySelector(".acc__sign").textContent=open?"\u2013":"+";
+  }
+});
+
+document.getElementById("brand").addEventListener("click",function(){view={type:"home"};render();});
+document.getElementById("ther").addEventListener("change",function(e){
+  therapist=e.target.checked;
+  if(view.type==="card") render();
+});
+
+render();
+
+if("serviceWorker" in navigator){
+  try{ navigator.serviceWorker.register("./sw.js"); }catch(err){}
+}
+
+</script>
+</body>
+</html>
