@@ -2619,7 +2619,7 @@ document.getElementById("ther").addEventListener("change",function(e){
 render();
 
 if("serviceWorker" in navigator){
-  try{ navigator.serviceWorker.register("./sw.js"); }catch(err){}
+  try{ navigator.serviceWorker.register("'sw.js"); }catch(err){}
 }
 
 </script>
